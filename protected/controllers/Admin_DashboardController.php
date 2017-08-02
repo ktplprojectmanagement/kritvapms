@@ -50,62 +50,65 @@ class Admin_DashboardController extends Controller
 		$data = array('','0',$today_date_val);
 		$resign_emp = $employee_data->get_employee_data($where,$data,$list);
 		
-		for($j=0;$j<count($resign_emp);$j++)
+		if(isset($resign_emp) && count($resign_emp)>0)
 		{
-		    $data=array(
-				'pms_status'=>'Inactive',
-		        );
-		    $update = Yii::app()->db->createCommand()->update('Employee',$data,'Employee_id=:Employee_id',array(':Employee_id'=>$resign_emp[$j]['Employee_id']));
+			for($j=0;$j<count($resign_emp);$j++)
+			{
+			    $data=array(
+					'pms_status'=>'Inactive',
+			        );
+			    $update = Yii::app()->db->createCommand()->update('Employee',$data,'Employee_id=:Employee_id',array(':Employee_id'=>$resign_emp[$j]['Employee_id']));
+			}
 		}
-		
-		//print_r($resign_emp);die();
 		
 		$recent_act=$recent_ac->get_notificationdata();
 		$recent_act1=$recent_ac->get_pending_notificationdata();
 		$recent_act2=$recent_ac->get_approve_notificationdata();
 		$recent_act3=$recent_ac->get_submitted_notificationdata();
-                if(isset($recent_act1) && count($recent_act1)>0)
-{
-for($i=0;$i<count($recent_act1);$i++){
-		$Employee_id=$recent_act1[$i]['Employee_id'];
-		$where = 'where Employee_id = :Employee_id';
-		$list = array('Employee_id');
-		$data = array($recent_act1[$i]['Employee_id']);
-		$recent_emp1[$i]=$employee_data->get_employee_data($where,$data,$list);
-		
+        if(isset($recent_act1) && count($recent_act1)>0)
+		{
+		for($i=0;$i<count($recent_act1);$i++){
+				$Employee_id=$recent_act1[$i]['Employee_id'];
+				$where = 'where Employee_id = :Employee_id';
+				$list = array('Employee_id');
+				$data = array($recent_act1[$i]['Employee_id']);
+				$recent_emp1[$i]=$employee_data->get_employee_data($where,$data,$list);
+				
+				}
 		}
-}
 		
 		
-if(isset($recent_act2) && count($recent_act2)>0)
-{
-for($i=0;$i<count($recent_act2);$i++){
-		$Employee_id=$recent_act2[$i]['Employee_id'];
-		$where = 'where Employee_id = :Employee_id';
-		$list = array('Employee_id');
-		$data = array($recent_act2[$i]['Employee_id']);
-		$recent_emp2[$i]=$employee_data->get_employee_data($where,$data,$list);
-		
+		if(isset($recent_act2) && count($recent_act2)>0)
+		{
+		for($i=0;$i<count($recent_act2);$i++){
+				$Employee_id=$recent_act2[$i]['Employee_id'];
+				$where = 'where Employee_id = :Employee_id';
+				$list = array('Employee_id');
+				$data = array($recent_act2[$i]['Employee_id']);
+				$recent_emp2[$i]=$employee_data->get_employee_data($where,$data,$list);
+				
+				}
 		}
-}
 		
 
 		if(isset($recent_act3) && count($recent_act3)>0)
-{
-for($i=0;$i<count($recent_act3);$i++){
-		$Employee_id=$recent_act3[$i]['Employee_id'];
-		$where = 'where Employee_id = :Employee_id';
-		$list = array('Employee_id');
-		$data = array($recent_act3[$i]['Employee_id']);
-		$recent_emp3[$i]=$employee_data->get_employee_data($where,$data,$list);
-		
+		{
+		for($i=0;$i<count($recent_act3);$i++){
+				$Employee_id=$recent_act3[$i]['Employee_id'];
+				$where = 'where Employee_id = :Employee_id';
+				$list = array('Employee_id');
+				$data = array($recent_act3[$i]['Employee_id']);
+				$recent_emp3[$i]=$employee_data->get_employee_data($where,$data,$list);
+				
+				}
 		}
-}
 
 		$kpi_sub = $model->get_distinct_list('Employee_id','where `goal_set_year`="'.$year1.'"');
 		
-		$kpi_data1 = array( );
-		for($i=0;$i<count($kpi_sub);$i++){
+		$kpi_data1 = array();
+		if(isset($kpi_sub) && count($kpi_sub)>0)
+		{
+			for($i=0;$i<count($kpi_sub);$i++){
 				$Employee_id=$kpi_sub[$i]['Employee_id'];
 				$where = 'where Employee_id = :Employee_id';
 				$list = array('Employee_id');
@@ -113,15 +116,14 @@ for($i=0;$i<count($recent_act3);$i++){
 				$kpi_data1[$i] = $employee_data->get_employee_data($where,$data,$list);
 				
 			}
+		}		
 
-		$kpi_pending=$model->get_pending_goal($year1);
-		
-
-		
-			$kpi_appr_data=array();
+		$kpi_pending=$model->get_pending_goal($year1);				
+		$kpi_appr_data=array();
 		$kpi_appr=$model->get_disinct_kra_appr($year1);
 		$cnt = 0;
 
+		if (isset($kpi_appr) && count($kpi_appr)>0) {
 			for($i=0;$i<count($kpi_appr);$i++){
 
 				$Employee_id=$kpi_appr[$i]['Employee_id'];
@@ -130,21 +132,24 @@ for($i=0;$i<count($recent_act3);$i++){
 				$data = array($kpi_appr[$i]['Employee_id']);
 				$kpi_appr_data1[$i] = $employee_data->get_employee_data($where,$data,$list);
 				
-                               if(!($kpi_appr_data1[$i]['0']['pms_status'] == 'Inactive'))
-{
-$kpi_appr_data[$cnt] = $kpi_appr_data1[$i];
-$cnt++;
-}
+                if(!($kpi_appr_data1[$i]['0']['pms_status'] == 'Inactive'))
+				{
+				$kpi_appr_data[$cnt] = $kpi_appr_data1[$i];
+				$cnt++;
+				}
 
 
 			}
-//print_r($kpi_appr_data);
-//die();
-			$kpi_emp_not_sub=array();
+		}
+
+
+	$kpi_emp_not_sub=array();
 	//	$emp_list = $model->get_distinct_list('Employee_id','where ((`goal_set_year`="'.$year1.'") AND (`KRA_status`= "" OR `KRA_status` ="Pending") AND  `KRA_status_flag` > "0") ');
 	$emp_list = $model->get_distinct_list('Employee_id','where ((`goal_set_year`="'.$year1.'") ) ');		
 			$emp_all_data = $employee_data->get_distinct_emplist();
 			$emp_id_array = '';
+			if(isset($emp_list) && count($emp_list)>0)
+			{
 			for ($m=0; $m < count($emp_list); $m++) { 
 
 				if($emp_id_array == '')
@@ -157,32 +162,36 @@ $cnt++;
 				}
 				
 			}
+			}
+			
 		$kpi_emp_not_sub = Yii::app()->db->createCommand()->select('*')->from('Employee')->where('pms_status != "Inactive" and Employee_id NOT IN ('.$emp_id_array.') ')->queryAll();
 //print_r($kpi_emp_not_sub);
 //die();
 		$mid_sub_data=array();
 		$mid_not_sub=array();
 		$mid_sub=$model->get_mid_review_submitted($year1);
-
-		for($i=0;$i<count($mid_sub);$i++){
+		
+		if (isset($mid_sub) && count($mid_sub)>0) {
+			for($i=0;$i<count($mid_sub);$i++){
 				$Employee_id=$mid_sub[$i]['Employee_id'];
 				$where = 'where Employee_id = :Employee_id';
 				$list = array('Employee_id');
 				$data = array($mid_sub[$i]['Employee_id']);
 				$mid_sub_data1[$i] = $employee_data->get_employee_data($where,$data,$list);
-if($mid_sub_data1[$i]['0']['pms_status'] != 'Inactive')
-{
-	$mid_sub_data[$i] = $mid_sub_data1[$i];
-}
-
-				
+				if(isset($mid_sub_data1[$i]['0']['pms_status']) && $mid_sub_data1[$i]['0']['pms_status'] != 'Inactive')
+				{
+					$mid_sub_data[$i] = $mid_sub_data1[$i];
+				}				
 			}
-$mid_sub_data=count(array_filter($mid_sub_data1));
+		}
+		
+		$mid_sub_data=count(array_filter($mid_sub_data1));
 
 		$emp_mid_list = $model->get_mid_review_submitted($year1);
 		$emp_all_data = $employee_data->get_distinct_emplist();
 		$emp_id_array = '';
-		for ($m=0; $m < count($emp_mid_list); $m++) { 
+		if (isset($emp_mid_list) && count($emp_mid_list)>0) {
+			for ($m=0; $m < count($emp_mid_list); $m++) { 
 				if($emp_id_array == '')
 				{
 					$emp_id_array = '"'.$emp_mid_list[$m]['Employee_id'].'"';
@@ -193,8 +202,9 @@ $mid_sub_data=count(array_filter($mid_sub_data1));
 				}
 				
 			}
+		}
+		
 		$mid_not_sub = Yii::app()->db->createCommand()->select('*')->from('Employee')->where('pms_status !="Inactive" and  Employee_id NOT IN ('.$emp_id_array.') ')->queryAll();
-
 			
 		$all_emp= implode(', ', $this->actionarray_column($emp_all_data, 'Employee_id'));
 		$data=$all_emp;
@@ -203,23 +213,14 @@ $mid_sub_data=count(array_filter($mid_sub_data1));
 		foreach ($array as &$value){
 		    $value = "'" . trim($value)."'";
 		}
-		$array = implode(', ', $array);
-		
-		
-		//Total head count
+		$array = implode(', ', $array);	
 
 		$tot_count=array();
 		$tot_count=$employee_data->getdata();
-
-		//Total head count
-		
 		
 		//IDP submitted status begin
 		$idp_sub=array();
 		$idp_sub=$idp->get_emp_idp_submitted($array,$year1);
-		
-		//IDP submitted status end
-		
 
 		//IDP not submitted status begin
 		$emp_not_idp= implode(', ', $this->actionarray_column($idp_sub, 'Employee_id'));
@@ -234,77 +235,62 @@ $mid_sub_data=count(array_filter($mid_sub_data1));
 		$idp_not_sub=array();
 		$idp_not_sub=$employee_data->get_emp_idp_not_submitted($emp_not_sub_idp);
 $code_idp = 0;
-for ($i=0; $i < count($idp_not_sub); $i++)
-{
-  $where = 'where Employee_id = :Employee_id ';
-  $list = array('Employee_id');
-  $data = array($idp_not_sub[$i]['Employee_id']);
-  $idp_not_sub1[$i] = $employee_data->get_employee_data($where,$data,$list);
-if(!($idp_not_sub1[$i] == ''))
-{
-$idp_not_sub[$i] = $idp_not_sub1[$i];
+
+if (isset($idp_not_sub) && count($idp_not_sub)>0) {
+	for ($i=0; $i < count($idp_not_sub); $i++)
+	{
+	  $where = 'where Employee_id = :Employee_id ';
+	  $list = array('Employee_id');
+	  $data = array($idp_not_sub[$i]['Employee_id']);
+	  $idp_not_sub1[$i] = $employee_data->get_employee_data($where,$data,$list);
+		if(!($idp_not_sub1[$i] == ''))
+		{
+		$idp_not_sub[$i] = $idp_not_sub1[$i];
+		}
+	  
+	}
 }
-  
-}
-//$idp_not_sub = $code_idp; 
-//print_r($idp_not_sub_count);die();
-		//print_r($idp_not_sub);die();
-		//IDP not submitted status end
-//print_r($idp_not_sub);die();
-		//IDP Pending for approval begin
+
+
 		$idp_pending=array();
 		$idp_pending=$idp->get_emp_idp_staus('Pending',$array,$year1);
 $code_idp1 = 0;
-for ($i=0; $i < count($idp_pending); $i++)
-{
-  $where = 'where Employee_id = :Employee_id ';
-  $list = array('Employee_id');
-  $data = array($idp_pending[$i]['Employee_id']);
-  $idp_pending1[$i] = $employee_data->get_employee_data($where,$data,$list);
-if(!($idp_pending1[$i] == ''))
-{
-$idp_pending[$i] = $idp_pending1[$i];
+if (isset($idp_pending) && count($idp_pending)>0) {
+	for ($i=0; $i < count($idp_pending); $i++)
+	{
+	  $where = 'where Employee_id = :Employee_id ';
+	  $list = array('Employee_id');
+	  $data = array($idp_pending[$i]['Employee_id']);
+	  $idp_pending1[$i] = $employee_data->get_employee_data($where,$data,$list);
+	if(!($idp_pending1[$i] == ''))
+	{
+	$idp_pending[$i] = $idp_pending1[$i];
+	}
+	  
+	}
 }
-  
-}
-//$idp_pending = $code_idp1; 
-		//print_r($idp_pending_count);die();
-		//IDP Pending for approval begin
-
-		//IDP Approved begin
 		$idp_approved=array();
 		$idp_approved=$idp->get_emp_idp_staus('Approved',$array,$year1);
 $code_idp2 = 0;
 $cnt = 0;
-for ($i=0; $i < count($idp_approved); $i++)
-{
-
-$where = 'where Employee_id = :Employee_id';
-  $list = array('Employee_id');
-  $data = array($idp_approved[$i]['Employee_id']);
-  $idp_approved1[$i] = $employee_data->get_employee_data($where,$data,$list);
-if(!($idp_approved1[$i]['0']['pms_status'] == 'Inactive'))
-{
-$idp_approved[$cnt] = $idp_approved1[$i];
-$cnt++;
- 
+if (isset($idp_approved) && count($idp_approved)>0) {
+	for ($i=0; $i < count($idp_approved); $i++)
+	{
+	$where = 'where Employee_id = :Employee_id';
+	  $list = array('Employee_id');
+	  $data = array($idp_approved[$i]['Employee_id']);
+	  $idp_approved1[$i] = $employee_data->get_employee_data($where,$data,$list);
+	if(!($idp_approved1[$i]['0']['pms_status'] == 'Inactive'))
+	{
+	$idp_approved[$cnt] = $idp_approved1[$i];
+	$cnt++;
+	 
+	}
+	 
+	}
 }
- 
-}
-//die();
-//$idp_approved = $code_idp2;
-//print_r($idp_approved);die();
-		//IDP Approved begin
-		//IDP initial status end
-
-		//IDP mid year review begin
-
-		//Mid year IDP submitted begin
 		$mid_idp_sub=array();
 		$mid_idp_sub=$idp->get_emp_mididp_submitted($array,$year1);
-
-
-		//Mid year IDP submitted end
 
 		//Mid year IDP not submitted begin 
 		$mid_idp_not_sub=array();
@@ -317,39 +303,43 @@ $cnt++;
 		}
 		$emp_not_subMid_idp = implode(', ', $emp_not_subMid_idp);
 		$mid_idp_not_sub=$employee_data->get_midEmp_idp_not_submitted($emp_not_subMid_idp);
-for ($i=0; $i < count($mid_idp_not_sub); $i++)
-{
-  $where = 'where Employee_id = :Employee_id';
-  $list = array('Employee_id');
-  $data = array($mid_idp_not_sub[$i]['Employee_id']);
-  $mid_idp_not_sub1[$i] = $employee_data->get_employee_data($where,$data,$list);
-if(!($mid_idp_not_sub1[$i] == ''))
-{
-$mid_idp_not_sub[$i] = $mid_idp_not_sub1[$i];
-}
-//print_r(count($mid_idp_sub[$i]));
-}	
-		
-		//Mid year IDP not submitted end
 
-		//IDP mid year review begin
-
-		//IDP
+		if (isset($mid_idp_not_sub) && count($mid_idp_not_sub)>0) {
+			for ($i=0; $i < count($mid_idp_not_sub); $i++)
+			{
+			  $where = 'where Employee_id = :Employee_id';
+			  $list = array('Employee_id');
+			  $data = array($mid_idp_not_sub[$i]['Employee_id']);
+			  $mid_idp_not_sub1[$i] = $employee_data->get_employee_data($where,$data,$list);
+			if(!($mid_idp_not_sub1[$i] == ''))
+			{
+			$mid_idp_not_sub[$i] = $mid_idp_not_sub1[$i];
+			}
+			//print_r(count($mid_idp_sub[$i]));
+			}
+		}
+	
 
 $code_idp2 = 0;
 //print_r($mid_idp_sub);die();
-for ($i=0; $i < count($mid_idp_sub); $i++)
-{
-  $where = 'where Employee_id = :Employee_id ';
-  $list = array('Employee_id');
-  $data = array($mid_idp_sub[$i]['Employee_id']);
-  $mid_idp_sub1[$i] = $employee_data->get_employee_data($where,$data,$list);
-if(!($mid_idp_sub1[$i] == ''))
-{
-$mid_idp_sub[$i] = $mid_idp_sub1[$i];
+if (isset($mid_idp_sub) && count($mid_idp_sub)>0) {
+	for ($i=0; $i < count($mid_idp_sub); $i++)
+	{
+	  $where = 'where Employee_id = :Employee_id ';
+	  $list = array('Employee_id');
+	  $data = array($mid_idp_sub[$i]['Employee_id']);
+	  $mid_idp_sub1[$i] = $employee_data->get_employee_data($where,$data,$list);
+	if(!($mid_idp_sub1[$i] == ''))
+	{
+	$mid_idp_sub[$i] = $mid_idp_sub1[$i];
+	}
+	//print_r(count($mid_idp_sub[$i]));
+	}
 }
-//print_r(count($mid_idp_sub[$i]));
-}		
+
+	echo "fgf";			
+//print_r($kpi_appr_data);
+die();			
 //print_r($mid_idp_sub);die();
 //print_r($kpi_emp_not_sub);die();
 

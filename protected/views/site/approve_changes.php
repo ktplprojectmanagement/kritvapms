@@ -1479,7 +1479,7 @@ form_data.append("retire_date",$('.retire_date').val());
                                                 processData: false, 
                                                 contentType: false,
                                                 'data' : form_data,
-                                                'url' : base_url+'/index.php/Login/UpdateEmp_profile',
+                                                'url' : base_url+'/kritvapms/index.php/Login/UpdateEmp_profile',
                                                 success : function(data)
                                                 { 
                                                    alert(data);
@@ -1571,7 +1571,7 @@ else if(obj.cluster_appraiser != undefined)
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Location_wiseAcces/del_Emp_profile',
+                                        url : base_url+'/kritvapms/index.php/Location_wiseAcces/del_Emp_profile',
                                         success : function(data)
                                         {   
  $("#err").show();
@@ -1584,7 +1584,7 @@ else if(obj.cluster_appraiser != undefined)
  if(data == '1')
                                              {
                                                 
-                                             window.location.replace(base_url+'/index.php/Location_wiseAcces'); 
+                                             window.location.replace(base_url+'/kritvapms/index.php/Location_wiseAcces'); 
                                             }
                                         }
 
@@ -1613,14 +1613,14 @@ else if(obj.cluster_appraiser != undefined)
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Location_wiseAcces/del_Emp_profile',
+                                        url : base_url+'/kritvapms/index.php/Location_wiseAcces/del_Emp_profile',
                                         success : function(data)
                                         {   
 
  if(data == '1')
                                              {
                                                 
-                                             window.location.replace(base_url+'/index.php/Location_wiseAcces'); 
+                                             window.location.replace(base_url+'/kritvapms/index.php/Location_wiseAcces'); 
                                             }
                                         }
 

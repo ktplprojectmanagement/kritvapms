@@ -865,7 +865,7 @@ with <?php if(isset($emp_data['0']['Emp_fname'])) { echo $emp_data['0']['Emp_fna
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : data,
-                            'url' : base_url+'/index.php?r=IDP/add_program',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/add_program',
                             success : function(data)
                             {
                               $("#new_topic").html(data);
@@ -1165,7 +1165,7 @@ if (chk_compl1 == 1)
                               'type' : 'post',
                               'datatype' : 'html',
                               'data' : detail_data,
-                              'url' : base_url+'/index.php?r=IDP/save_data_final',
+                              'url' : base_url+'/kritvapms/index.php?r=IDP/save_data_final',
                             success : function(data)
                             {
                                if (data) 
@@ -1197,7 +1197,7 @@ if (chk_compl1 == 1)
                                               type : 'post',
                                               datatype : 'html',
                                               data : data,
-                                              url : base_url+'/index.php?r=Setgoals/goalapproved',
+                                              url : base_url+'/kritvapms/index.php?r=Setgoals/goalapproved',
                                               success : function(data)
                                               {
                                                   $("#term_lable").css('display','none');
@@ -1237,7 +1237,7 @@ if (chk_compl1 == 1)
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/del_extra_program',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/del_extra_program',
                                 success : function(data)
                                 {
                                   location.reload();
@@ -1262,7 +1262,7 @@ if (chk_compl1 == 1)
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/del_extra_program_list',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/del_extra_program_list',
                                 success : function(data)
                                 {
                                     //alert(data);
@@ -1458,7 +1458,7 @@ if (chk_compl1 == 1)
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                 success : function(data)
                                 {
                                     alert(data);

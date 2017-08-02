@@ -64,7 +64,7 @@
                                                 'type' : 'post',
                                                 'datatype' : 'html',
                                                 'data' : grade,
-                                                'url' : base_url+'/index.php/Newemployee/Designation_change',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/Designation_change',
                                                
                                                 success : function(data)
                                                 {
@@ -89,7 +89,7 @@
                                                 'type' : 'post',
                                                 'datatype' : 'json',
                                                 'data' : cluster_value,
-                                                'url' : base_url+'/index.php/Newemployee/cluster_head',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/cluster_head',
                                                
                                                 success : function(data)
                                                 {
@@ -1389,7 +1389,7 @@ form_data.append("last_working_date",$('.last_working_date').val());
                                                 processData: false, 
                                                 contentType: false,
                                                 'data' : form_data,
-                                                'url' : base_url+'/index.php/Login/UpdateEmp_profile',
+                                                'url' : base_url+'/kritvapms/index.php/Login/UpdateEmp_profile',
                                                 success : function(data)
                                                 { 
                                                   // alert(data);
@@ -1494,13 +1494,13 @@ else if(obj.cluster_appraiser != undefined)
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Login/del_Emp_profile',
+                                        url : base_url+'/kritvapms/index.php/Login/del_Emp_profile',
                                         success : function(data)
                                         {   
                                             if(data == '1')
                                              {
                                                 
-                                             window.location.replace(base_url+'/index.php/Newemployee/employee_master'); 
+                                             window.location.replace(base_url+'/kritvapms/index.php/Newemployee/employee_master'); 
                                             }
                                         }
 
@@ -1527,7 +1527,7 @@ $("#bu").change(function(){
                                                 'type' : 'post',
                                                 'datatype' : 'json',
                                                 'data' : bu_value,
-                                                'url' : base_url+'/index.php/Newemployee/Bu_details',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/Bu_details',
                                                
                                                 success : function(data)
                                                 {
@@ -1556,7 +1556,7 @@ $("#bu_head").change(function(){
                                                 'type' : 'post',
                                                 'datatype' : 'json',
                                                 'data' : bu_head,
-                                                'url' : base_url+'/index.php/Newemployee/Bu_mail',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/Bu_mail',
                                                
                                                 success : function(data)
                                                 {
@@ -1602,7 +1602,7 @@ $("#location").change(function(){
                                                 'type' : 'post',
                                                 'datatype' : 'json',
                                                 'data' : location,
-                                                'url' : base_url+'/index.php/Newemployee/Plant_details',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/Plant_details',
                                                
                                                 success : function(data)
                                                 {
@@ -1631,7 +1631,7 @@ $("#plant_head").change(function(){
                                                 'type' : 'post',
                                                 'datatype' : 'json',
                                                 'data' : plant_head,
-                                                'url' : base_url+'/index.php/Newemployee/Plant_mail',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/Plant_mail',
                                                
                                                 success : function(data)
                                                 {

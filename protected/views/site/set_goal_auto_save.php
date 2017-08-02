@@ -1262,7 +1262,7 @@ if (isset($emp_all_detail['0']['Reporting_officer1_id'])) {
     $head_array['0'] = $emp_all_detail['0']['Reporting_officer1_id'];
 }
 
-if ($emp_all_detail['0']['Reporting_officer2_id'] == '') {
+if (isset($emp_all_detail['0']['Reporting_officer2_id']) && $emp_all_detail['0']['Reporting_officer2_id'] == '') {
     if ($emp_all_detail['0']['reporting_1_change'] !='' && strtotime(date('Y-m-d')) <= strtotime($emp_all_detail['0']['reporting_1_effective_date'])) {
                $head_array['1'] = $emp_all_detail['0']['reporting_1_change'];
     }
@@ -1350,19 +1350,14 @@ else
                                                             //print_r($KRA_category_auto['0']['minimum_kpi']);die();
                                                            
                                                             for ($i=0; $i < $list_cnt; $i++) {
-                                                            
-                                                                $unit = $target_unit[$cnt];
                                                                 
-                                                                                       
+                                                                if(isset($target_unit[$cnt]))
+                                                                {
+                                                                    $unit = $target_unit[$cnt];
+                                                                }                   
                                                                 
-                                                                if (!isset($kpi_count[$i]) || $kpi_count=='') {
-                                                                   $kpi_count[$i] = '';
-                                                                }
-
-                                                                if (!isset($per_kpi_wt[$i]) || $per_kpi_wt=='' || $per_kpi_wt=='0') {
-                                                                   $per_kpi_wt[$i] = '';
-                                                                }
-                                                                if ($unit=='Select') {
+                                                                
+                                                                if (isset($unit) && $unit=='Select') {
                                                                     $unit_type[$unit] = array('selected' => 'selected');
                                                                     $unit_target = '';
                                                                     for ($j=0; $j < 5; $j++) { 
@@ -1371,7 +1366,7 @@ else
                                                                     $disable_select = true;
 
                                                                 }
-                                                                else if ($unit=='Days' || $unit=='Text' || $unit=='Ratio' || $unit=='Percentage' || $unit=='Date') { 
+                                                                else if (isset($unit) && $unit=='Days' || $unit=='Text' || $unit=='Ratio' || $unit=='Percentage' || $unit=='Date') { 
 
                                                                 $disable_select = false; 
                                                                 $disable_select1 = true;                                                                
@@ -1388,7 +1383,10 @@ else
                                                                     if (isset($target_value1[$i]) && $target_value1[$i] != '') {
                                                                        $val_data = explode('-',$target_value1[$i]);
                                                                         for ($j=0; $j < count($val_data); $j++) { 
-                                                                            $val[$i][$j] = $val_data[$j];
+                                                                            if(isset($val_data[$j]))
+                                                                            {
+                                                                                $val[$i][$j] = $val_data[$j];
+                                                                            }                                                                            
                                                                         }
                                                                         
                                                                     }
@@ -1402,12 +1400,12 @@ else
                                                                     
                                                                    
                                                                 }
-                                                                else if($unit=='Units' || $unit=='Weight' || $unit=='Value')
+                                                                else if(isset($unit) && $unit=='Units' || $unit=='Weight' || $unit=='Value')
                                                                 {
                                                                     $disable_select = true;
                                                                     $disable_select1 = false;
                                                                     $unit_type[$unit] = array('selected' => 'selected');
-                                                                   if (isset($target_value1[$i]) && count($target_unit[$cnt])>0 && ($target_value1[$i]!='' || $target_value1[$i]!=0)) {
+                                                                   if (isset($target_value1[$cnt]) && isset($target_value1[$i]) && count($target_unit[$cnt])>0 && ($target_value1[$i]!='' || $target_value1[$i]!=0)) {
                                                                        $unit_target = $target_value1[$i];
                                                                            for ($j=0; $j < 5; $j++) { 
                                                                             if ($j==0) {
@@ -1493,41 +1491,42 @@ else
                                              {
                                                 $disable_select1 = '';
                                              }
-                                              if (isset($val[$i][0])) {
+                                             if (isset($val[$i][0])) {
                                                  $val[$i][0] = $val[$i][0];
                                              }
                                              else
                                              {
-                                               $val[$i][0] = '';
+                                                $val[$i][0] = '';
                                              }
                                              if (isset($val[$i][1])) {
                                                  $val[$i][1] = $val[$i][1];
                                              }
                                              else
                                              {
-                                               $val[$i][1] = '';
+                                                $val[$i][1] = '';
                                              }
                                              if (isset($val[$i][2])) {
                                                  $val[$i][2] = $val[$i][2];
                                              }
                                              else
                                              {
-                                               $val[$i][2] = '';
+                                                $val[$i][2] = '';
                                              }
                                              if (isset($val[$i][3])) {
                                                  $val[$i][3] = $val[$i][3];
                                              }
                                              else
                                              {
-                                               $val[$i][3] = '';
+                                                $val[$i][3] = '';
                                              }
                                              if (isset($val[$i][4])) {
                                                  $val[$i][4] = $val[$i][4];
                                              }
                                              else
                                              {
-                                               $val[$i][4] = '';
+                                                $val[$i][4] = '';
                                              }
+                                             
                                                              if(isset($edit_flag) && $edit_flag!='')
                                              {
  echo '<tr>
@@ -1562,7 +1561,7 @@ else
                                                  
                                             // print_r("fdgfdgf");die();
                                                        } } } 
-                                                        
+                                                       
                                                     ?>   
                                                     <tr id="extra_kpi<?php echo $kpi_id; ?>">
                                                         
@@ -1735,7 +1734,7 @@ $new_kra_till_date = $emp_data1->get_employee_data($where,$data,$list);
                                                                 <tr>
                                                                     <td class="validate_field1"><?php if(isset($kpi_list_data[$i])) { echo $kpi_list_data[$i]; } ?></td>
                                                                     <td class="validate_field1"><?php if(isset($kpi_list_unit[$i])) { echo $kpi_list_unit[$i]; } ?></td>
-                                                                        <?php
+                                                                        <?php 
                                                                             if (isset($kpi_list_unit[$i]) && $kpi_list_unit[$i] == 'Units' || $kpi_list_unit[$i] == 'Weight' || $kpi_list_unit[$i] == 'Value') {
                                                                                 ?>
                                                                                 <td class="validate_field1" >
@@ -1858,6 +1857,7 @@ $new_kra_till_date = $emp_data1->get_employee_data($where,$data,$list);
 
                                         <div class="output_div1">
 <?php
+
 //print_r("fdgfdgf");die();
 if(isset($emp_data['0']['Reporting_officer1_id']) && $emp_data['0']['Reporting_officer1_id'] != '') {
 $emp_data1 = new EmployeeForm;
@@ -1938,7 +1938,7 @@ $new_kra_till_date = $emp_data1->get_employee_data($where,$data,$list);
                                                                 }
                                                                 
                                                             ?>
-                                                           <?php
+                                                           <?php 
                                                                 $cnt = 0;
                                                                 for ($i=0; $i < count($kpi_list_data); $i++) { if (isset($kpi_list_data[$i]) && $kpi_list_data[$i]!='') { $cnt++;
                                                             ?>
@@ -2251,7 +2251,11 @@ $new_kra_till_date = $emp_data1->get_employee_data($where,$data,$list);
                                                                                  <td></td>
                                                                                 <td class="validate_field1"><?php if(isset($KPI_target_value[$i])) { echo $KPI_target_value[$i]; } ?></td>
                                                                                 <?php 
-                                                                                $value_data = explode('-', $kpi_list_target[$i]);
+                                                                                if(isset($kpi_list_target[$i]))
+                                                                                {
+                                                                                    $value_data = explode('-', $kpi_list_target[$i]);
+                                                                                }
+                                                                                
                                                                                 for ($j=0; $j < 5; $j++) { 
                                                                                     if (isset($value_data[$j])) {?>
                                                                                      <td class="validate_field1">
@@ -2472,8 +2476,12 @@ width: 100%;">&nbsp;&nbsp;
                                             if (isset($IDP_data) && count($IDP_data)>0 && isset($IDP_data['0']['program_comment'])) {
                                                
                                                 for ($j=0; $j < count($cmt2); $j++) {
-                                                    $cmt1 = explode('?', $cmt2[$j]);
-                                                    if ($i == $cmt1[0]) {                                                            
+                                                    if(isset($cmt2[$j]))
+                                                    {
+                                                        $cmt1 = explode('?', $cmt2[$j]);
+                                                    }
+                                                    
+                                                    if (isset($cmt1[0]) && isset($cmt1[1]) && $i == $cmt1[0]) {                                                            
                                                          $cmnt = $cmt1[1];
                                                     }
                                                 }
@@ -2507,13 +2515,13 @@ width: 100%;">&nbsp;&nbsp;
                                             ?>
                                             <tr class="error_row_chk" id="show_this-<?php echo $i; ?>"> 
                                                <!--  <td><?php echo $i; ?></td>   -->                 
-                                                <td class="prog_name" id="<?php echo $i; ?>"> <?php  echo $program_data_result[$i]['program_name']; ?> <?php if($program_data_result[$i]['need'] == 1) { ?><label style="color: red">*</label><?php }else if($program_data_result[$i]['need'] == 2) { ?><label style="color: red">**</label><?php } ?>
-                                                <?php if($program_data_result[$i]['need'] == 2 && $program_data_result[$i]['location'] != '' && $program_data_result[$i]['location'] != 'undefined') { ?><label id = 'complusory_prg<?php echo $i; ?>' style="color: red;display: none"><?php echo $program_data_result[$i]['location']; ?></label><?php } ?>
+                                                <td class="prog_name" id="<?php echo $i; ?>"> <?php  if(isset($program_data_result[$i]['program_name'])) { echo $program_data_result[$i]['program_name']; } ?> <?php if(isset($program_data_result[$i]['need']) && $program_data_result[$i]['need'] == 1) { ?><label style="color: red">*</label><?php }else if(isset($program_data_result[$i]['need']) && $program_data_result[$i]['need'] == 2) { ?><label style="color: red">**</label><?php } ?>
+                                                <?php if(isset($program_data_result[$i]['need']) && $program_data_result[$i]['need'] == 2 && isset($program_data_result[$i]['location']) && $program_data_result[$i]['location'] != '' && $program_data_result[$i]['location'] != 'undefined') { ?><label id = 'complusory_prg<?php echo $i; ?>' style="color: red;display: none"><?php if(isset($program_data_result[$i]['location'])) { echo $program_data_result[$i]['location']; } ?></label><?php } ?>
                                                 </td>
-                                                <td> <?php echo $program_data_result[$i]['faculty_name']; ?> </td>
-                                                <td> <?php echo $program_data_result[$i]['training_days']; ?> </td>
+                                                <td> <?php if(isset($program_data_result[$i]['faculty_name'])) { echo $program_data_result[$i]['faculty_name']; } ?> </td>
+                                                <td> <?php if(isset($program_data_result[$i]['training_days'])) { echo $program_data_result[$i]['training_days']; } ?> </td>
                                                 <td class="col-md-4">
-<?php if($program_data_result[$i]['need'] == 2 || $program_data_result[$i]['need']==1) {
+<?php if(isset($program_data_result[$i]['need']) && $program_data_result[$i]['need'] == 2 || $program_data_result[$i]['need']==1) {
     $cmnt='This is mandatory';
     if(isset($IDP_data['0']['set_status']) && count($IDP_data)>0 && $IDP_data['0']['set_status']=='Approved') {
 echo CHtml::textField('program_cmd',$cmnt,$htmlOptions=array('disabled' => 'disabled','class'=>"form-control col-md-4 program_cmd",'id'=>'program_cmd-'.$i,"maxlength"=>"1000" ));
@@ -2577,12 +2585,31 @@ echo CHtml::textField('program_cmd',$cmnt,$htmlOptions=array('class'=>"form-cont
                                                          $topic = '';$day = '';$faculty = '';
                                                          if (isset($IDP_data) && count($IDP_data)>0 && isset($IDP_data['0']['extra_topic'])) {
                                                                 $topic1 = explode(';',$IDP_data['0']['extra_topic']);
-                                                                $topic = $topic1[0];
-                                                                $day1 = explode(';',$IDP_data['0']['extra_days']);
-                                                                $day = $day1[0];
-                                                                $faculty2 = explode(';',$IDP_data['0']['extra_faculty']);
+                                                                if(isset($topic1[0]))
+                                                                {
+                                                                    $topic = $topic1[0];
+                                                                }
+                                                                if(isset($IDP_data['0']['extra_days']))
+                                                                {
+                                                                     $day1 = explode(';',$IDP_data['0']['extra_days']);
+                                                                }
+                                                                if(isset($day1[0]))
+                                                                {
+                                                                   $day = $day1[0];
+                                                                }
+                                                                if(isset($IDP_data['0']['extra_faculty']))
+                                                                {
+                                                                   $faculty2 = explode(';',$IDP_data['0']['extra_faculty']);
+                                                                }
+                                                                if(isset($faculty2[0]))
+                                                                {
+                                                                   $faculty[$faculty2[0]] = array('selected' => 'selected');
+                                                                }
+                                                               
+                                                                
+                                                                
                                                                 // $faculty1 = explode('?',$faculty2[0]);                           
-                                                                $faculty[$faculty2[0]] = array('selected' => 'selected');
+                                                                
                                                                 
                                                                  //print_r($faculty);die();
                                                          }
@@ -2656,12 +2683,24 @@ else
                                                              if (isset($IDP_data) && count($IDP_data)>0 && isset($IDP_data['0']['extra_topic'])) {
                                                                     $topic1 = explode(';',$IDP_data['0']['extra_topic']);
                                                                     if (isset($topic1[1])) {
-                                                                       $topic = $topic1[1];
-                                                                        $day1 = explode(';',$IDP_data['0']['extra_days']);
-                                                                        $day = $day1[1];
-                                                                        $faculty2 = explode(';',$IDP_data['0']['extra_faculty']);
+                                                                        if (isset($topic1[1])) {
+                                                                            $topic = $topic1[1];
+                                                                        }
+                                                                        if (isset($IDP_data['0']['extra_days'])) {
+                                                                            $day1 = explode(';',$IDP_data['0']['extra_days']);
+                                                                        }
+                                                                        if (isset($day1[1])) {
+                                                                            $day = $day1[1];
+                                                                        }
+                                                                        if (isset($IDP_data['0']['extra_faculty'])) {
+                                                                            $faculty2 = explode(';',$IDP_data['0']['extra_faculty']);
+                                                                        }
+                                                                        if (isset($faculty2[1])) {
+                                                                           $faculty[$faculty2[1]] = array('selected' => 'selected');
+                                                                        }
+                                                                        
                                                                         // $faculty1 = explode('?',$faculty2[0]);                           
-                                                                        $faculty[$faculty2[1]] = array('selected' => 'selected');
+                                                                        
                                                                     }
                                                              }
 if(isset($IDP_data['0']['set_status']) && count($IDP_data)>0 && $IDP_data['0']['set_status']=='Approved') {
@@ -2788,7 +2827,10 @@ else
                                                               $meet = '';
                                                               if (isset($IDP_data['0']['meeting_planned']) && $IDP_data['0']['meeting_planned']!='') {
                                                                 $meet = explode(';',$IDP_data['0']['meeting_planned']);
-                                                                $meet = $meet[0];
+                                                                if(isset($meet[0]))
+                                                                {
+                                                                    $meet = $meet[0];
+                                                                }                                                                
                                                               }
                                                               else
                                                               {
@@ -2801,14 +2843,17 @@ else
 {
  echo CHtml::textField('number_of_meetings3',$meet,$htmlOptions=array('class'=>"form-control col-md-4 number_of_meetings3",'id'=>'number_of_meetings3',"maxlength"=>"1000"));
 }
-                                                               ?> 
+                                                             ?> 
                                                           </div>
                                                        <div class="col-md-2">
                                                              <?php 
                                                               $meet = '';
                                                               if (isset($IDP_data['0']['topic_to_be_diss']) && $IDP_data['0']['topic_to_be_diss']!='') {
                                                                 $meet = explode(';',$IDP_data['0']['topic_to_be_diss']);
-                                                                $meet = $meet[0];
+                                                                if(isset($meet[0]))
+                                                                {
+                                                                    $meet = $meet[0];
+                                                                }  
                                                               }
                                                               else
                                                               {
@@ -2884,7 +2929,10 @@ else
                                                            $meet = '';
                                                           if (isset($IDP_data['0']['meeting_planned']) && $IDP_data['0']['meeting_planned']!='') {
                                                             $meet = explode(';',$IDP_data['0']['meeting_planned']);
-                                                            $meet = $meet[1];
+                                                            if (isset($meet[1])) {
+                                                               $meet = $meet[1];
+                                                            }
+                                                            
                                                           }
                                                           else
                                                           {
@@ -2905,7 +2953,9 @@ else
                                                            $meet = '';
                                                           if (isset($IDP_data['0']['topic_to_be_diss']) && $IDP_data['0']['topic_to_be_diss']!='') {
                                                             $meet = explode(';',$IDP_data['0']['topic_to_be_diss']);
-                                                            $meet = $meet[1];
+                                                            if (isset($meet[1])) {
+                                                               $meet = $meet[1];
+                                                            }
                                                           }
                                                           else
                                                           {
@@ -3141,7 +3191,7 @@ else
 {
  echo CHtml::textField('reviewer_nm',$review_name,$htmlOptions=array('maxlength'=>80,'class'=>"form-control col-md-4 reviewvers_name"));
 }
-                                                         ?> 
+                                                       ?> 
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -3161,7 +3211,7 @@ else
                                             if (isset($kpi_data) && count($kpi_data)>0) { ?>
                                           <div id="show_spin" style="display: none"><i class="fa fa-spinner fa-spin" style="font-size:24px"></i></div>     
                                          <div class="btn-group col-md-12" style="float:left">
-                    <?php if((isset($kpi_data['0']['kra_complete_flag']) && $kpi_data['0']['kra_complete_flag']==0) || $emp_data[0]['new_kra_create'] == 'on') { ?>
+                    <?php if((isset($kpi_data['0']['kra_complete_flag']) && $kpi_data['0']['kra_complete_flag']==0) || (isset($emp_data[0]['new_kra_create']) && $emp_data[0]['new_kra_create'] == 'on')) { ?>
                     <input name="term_condition" value="term_condition" id="term_condition" type="checkbox">
                     <lable id="blink_me" style="color: red;"> I agree to the goals and IDP filled above
 </lable>
@@ -6222,8 +6272,8 @@ $where = 'where Email_id = :Email_id';
                                                                 if(isset($kpi_list_data) && count($kpi_list_data)>0)
                                                                 {
                                                                     for ($i=0; $i < count($kpi_list_data); $i++) { 
-                                                                    if ($kpi_list_data[$i] != '') {
-                                                                        if($kpi_data_data == '')
+                                                                    if (isset($kpi_list_data[$i]) && $kpi_list_data[$i] != '') {
+                                                                        if(isset($kpi_data_data) && $kpi_data_data == '')
                                                                         {
                                                                             $kpi_data_data = 1;
                                                                         }
@@ -6237,37 +6287,41 @@ $where = 'where Email_id = :Email_id';
                                                             ?>
                                                            <?php
                                                                 $cnt = 0;
-                                                                for ($i=0; $i < count($kpi_list_data); $i++) { if ($kpi_list_data[$i]!='') { $cnt++;
+                                                                for ($i=0; $i < count($kpi_list_data); $i++) { if (isset($kpi_list_data[$i]) && $kpi_list_data[$i]!='') { $cnt++;
                                 if (!isset($KPI_target_value[$i])) {
                                                                         $KPI_target_value[$i] = '';                                                                       
                                                                     }
                                                                 }
                                                             ?>
                                                                 <tr>
-                                                                    <td style="height: 30px;border: 1px solid black;font-size: 5px;"><?php echo $kpi_list_data[$i]; ?></td>
-                                                                    <td style="border: 1px solid black;font-size: 5px;"><?php echo $kpi_list_unit[$i]; ?></td>
-                                                                        <?php
-                                                                            if ($kpi_list_unit[$i] == 'Units' || $kpi_list_unit[$i] == 'Weight' || $kpi_list_unit[$i] == 'Value') {
+                                                                    <td style="height: 30px;border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_data[$i])) { echo $kpi_list_data[$i]; } ?></td>
+                                                                    <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_unit[$i])) { echo $kpi_list_unit[$i]; } ?></td>
+                                                                        <?php      
+                                                                            if (isset($kpi_list_unit[$i]) && $kpi_list_unit[$i] == 'Units' || $kpi_list_unit[$i] == 'Weight' || $kpi_list_unit[$i] == 'Value') {
                                                                                 ?>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo $KPI_target_value[$i]; ?></td>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo $kpi_list_target[$i]; ?></td>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo '< '.round($kpi_list_target[$i]*0.69,2); ?></td>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo round($kpi_list_target[$i]*0.70,2)." to ".round($kpi_list_target[$i]*0.95,2);?></td>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo round($kpi_list_target[$i]*0.96,2)." to ".round($kpi_list_target[$i]*1.05,2);?></td>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo round($kpi_list_target[$i]*1.06,2)." to ".round($kpi_list_target[$i]*1.29,2);?></td>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo round($kpi_list_target[$i]*1.39,2);?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($KPI_target_value[$i])) { echo $KPI_target_value[$i]; } ?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_target[$i])) { echo $kpi_list_target[$i]; } ?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_target[$i])) { echo '< '.round($kpi_list_target[$i]*0.69,2); } ?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_target[$i])) { echo round($kpi_list_target[$i]*0.70,2)." to ".round($kpi_list_target[$i]*0.95,2); }?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_target[$i])) { echo round($kpi_list_target[$i]*0.96,2)." to ".round($kpi_list_target[$i]*1.05,2); }?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_target[$i])) { echo round($kpi_list_target[$i]*1.06,2)." to ".round($kpi_list_target[$i]*1.29,2); }?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($kpi_list_target[$i])) { echo round($kpi_list_target[$i]*1.39,2); }?></td>
                                                                         <?php
                                                                             }
                                                                             else
                                                                             {
                                                                         ?>
-                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php echo $KPI_target_value[$i]; ?></td>
+                                                                                <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($KPI_target_value[$i])) { echo $KPI_target_value[$i]; } ?></td>
                                                                                 <td style="border: 1px solid black;font-size: 5px;"></td>
                                                                                 <?php
-                                                                                $value_data = explode('-', $kpi_list_target[$i]);
+                                                                                if(isset($kpi_list_target[$i]))
+                                                                                {
+                                                                                    $value_data = explode('-', $kpi_list_target[$i]);
+                                                                                }
+                                                                                
                                                                                 for ($j=0; $j < 5; $j++) { 
                                                                                     if (isset($value_data[$j])) {?>
-                                                                                     <td style="border: 1px solid black;font-size: 5px;"><?php echo $value_data[$j]; ?></td>
+                                                                                     <td style="border: 1px solid black;font-size: 5px;"><?php if(isset($value_data[$j])) { echo $value_data[$j]; } ?></td>
                                                                                 <?php
                                                                                 }
                                                                                 else
@@ -6482,7 +6536,7 @@ A: Development through Instructor led training in Classroom</b></span></font></p
                 {
                   for ($j=0; $j < count($cmt2); $j++) {
                         $cmt1 = explode('?', $cmt2[$j]);
-                        if (isset($cmt1[0]) && $i == $cmt1[0]) {                                                            
+                        if (isset($cmt1[1]) && isset($cmt1[0]) && $i == $cmt1[0]) {                                                            
                              $cmnt = $cmt1[1];
                              if(isset($prg_state[$j]))
                              {
@@ -6552,16 +6606,29 @@ request for it. </i></font>
               {
                 $topic = $topic1[0];
               }
-              
-              $day1 = explode(';',$IDP_data['0']['extra_days']);
-$finaltopic = explode('^',$IDP_data['0']['Extra_year_end_prg_status']);
-$finaltopic_cmt = explode('^',$IDP_data['0']['Extra_year_end_prg_comments']);
+              if(isset($IDP_data['0']['extra_days']))
+              {
+                $day1 = explode(';',$IDP_data['0']['extra_days']);
+              }
+              if(isset($IDP_data['0']['Extra_year_end_prg_status']))
+              {
+                $finaltopic = explode('^',$IDP_data['0']['Extra_year_end_prg_status']);
+              }
+              if(isset($IDP_data['0']['Extra_year_end_prg_comments']))
+              {
+                $finaltopic_cmt = explode('^',$IDP_data['0']['Extra_year_end_prg_comments']);
+              }
+
 if(isset($day1[0]))
 {
 $day = $day1[0];
 }
+if(isset($IDP_data['0']['extra_faculty']))
+              {
+                $faculty2 = explode(';',$IDP_data['0']['extra_faculty']);
+              }
               
-              $faculty2 = explode(';',$IDP_data['0']['extra_faculty']);
+              
               // $faculty1 = explode('?',$faculty2[0]); 
 if(isset($faculty2[0]))
 {
@@ -6612,9 +6679,19 @@ $faculty[$faculty2[0]] = array('selected' => 'selected');
   <?php
     $topic = '';$day = '';$faculty = '';$finaltopic1 = '';$finaltopic_cmt1 = '';
     if (isset($IDP_data) && count($IDP_data)>0 && isset($IDP_data['0']['extra_topic'])) {
-        $topic1 = explode(';',$IDP_data['0']['extra_topic']);
-$finaltopic = explode('^',$IDP_data['0']['Extra_year_end_prg_status']);
-$finaltopic_cmt = explode('^',$IDP_data['0']['Extra_year_end_prg_comments']);
+
+    if(isset($IDP_data['0']['extra_topic']))
+              {
+                $topic1 = explode(';',$IDP_data['0']['extra_topic']);
+              }
+              if(isset($IDP_data['0']['Extra_year_end_prg_status']))
+              {
+                $finaltopic = explode('^',$IDP_data['0']['Extra_year_end_prg_status']);
+              }
+              if(isset($IDP_data['0']['Extra_year_end_prg_comments']))
+              {
+                $finaltopic_cmt = explode('^',$IDP_data['0']['Extra_year_end_prg_comments']);
+              }
 //print_r($IDP_data);die();
         if (isset($topic1[1])) {
            $topic = $topic1[1];
@@ -6681,9 +6758,20 @@ B: Development through developmental relationships</b></font></p>
   <?php
     $faculty3 = '';
         if (isset($IDP_data['0']['leader_name'])) {
-          $faclty = explode(';',$IDP_data['0']['leader_name']);
-$relfinaltopic = explode('^',$IDP_data['0']['Relationship_year_end_status']);
-$relfinaltopic_cmt = explode('^',$IDP_data['0']['Relationship_year_end_comments']);
+                if(isset($IDP_data['0']['leader_name']))
+              {
+                $faclty = explode(';',$IDP_data['0']['leader_name']);
+              }
+              if(isset($IDP_data['0']['Relationship_year_end_status']))
+              {
+                $relfinaltopic = explode('^',$IDP_data['0']['Relationship_year_end_status']);
+              }
+              if(isset($IDP_data['0']['Relationship_year_end_comments']))
+              {
+                $relfinaltopic_cmt = explode('^',$IDP_data['0']['Relationship_year_end_comments']);
+              }
+          
+
           if (isset($faclty[0])) {
             $faculty3 = $faclty[0];
           }

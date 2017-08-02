@@ -188,7 +188,7 @@ $(".get_print").click(function () {
                                     contentType: false,
                                     enctype : 'multipart/form-data',
                                     data : formData,
-                                    url : base_url+'/index.php?r=Midreview/employee_mid_review1',
+                                    url : base_url+'/kritvapms/index.php?r=Midreview/employee_mid_review1',
                                     success : function(data)
                                     { 
                                         //alert(data);
@@ -222,7 +222,7 @@ $.ajax({
 type : 'post',
 datatype : 'html',
 data : data,
-url : base_url+'/index.php?r=Checkattach/check_view2',
+url : base_url+'/kritvapms/index.php?r=Checkattach/check_view2',
 success : function(data)
 {
     //alert(data);
@@ -236,7 +236,7 @@ $.ajax({
 type : 'post',
 datatype : 'html',
 data : data1,
-url : base_url+'/index.php?r=Checkattach/check_idp1',
+url : base_url+'/kritvapms/index.php?r=Checkattach/check_idp1',
 success : function(data)
 {
     //alert("dsfdsf");
@@ -265,7 +265,7 @@ function save_detail_pdf()
                     type : 'post',
                     datatype : 'html',
                     data : data,
-                    url : base_url+'/index.php?r=Checkattach/check_view2',
+                    url : base_url+'/kritvapms/index.php?r=Checkattach/check_view2',
                     success : function(data)
                     {
                         //alert(data);
@@ -279,7 +279,7 @@ function save_detail_pdf()
                     type : 'post',
                     datatype : 'html',
                     data : data1,
-                    url : base_url+'/index.php?r=Checkattach/check_idp1',
+                    url : base_url+'/kritvapms/index.php?r=Checkattach/check_idp1',
                     success : function(data)
                     {
                         //alert(data);
@@ -2095,7 +2095,7 @@ $(document).ready(function(){
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Login/set_new',
+                                url : base_url+'/kritvapms/index.php?r=Login/set_new',
                                 success : function(data)
                                 { 
                                     //alert(data);
@@ -2118,7 +2118,7 @@ $(document).ready(function(){
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Midreview/get_mid_emp_data',
+                                url : base_url+'/kritvapms/index.php?r=Midreview/get_mid_emp_data',
                                 success : function(data)
                                 { 
                                     var state = data.split('-');
@@ -2131,7 +2131,7 @@ $(document).ready(function(){
                                                 $.ajax({
                                                     type : 'post',
                                                     datatype : 'html',
-                                                    url : base_url+'/index.php?r=Midreview/goalnotification',
+                                                    url : base_url+'/kritvapms/index.php?r=Midreview/goalnotification',
                                                     success : function(data)
                                                     {
                                                         alert(data);
@@ -2358,7 +2358,7 @@ $("#saving").css('display','block');
                                     contentType: false,
                                     enctype : 'multipart/form-data',
                                     data : formData,
-                                    url : base_url+'/index.php?r=Midreview/employee_mid_review',
+                                    url : base_url+'/kritvapms/index.php?r=Midreview/employee_mid_review',
                                     success : function(data)
                                     { 
                                       save_detail_pdf();

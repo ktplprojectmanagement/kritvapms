@@ -828,7 +828,7 @@ $rel_prgrm_cmd2 = '';
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : data,
-                            'url' : base_url+'/index.php?r=IDP/add_program',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/add_program',
                             success : function(data)
                             {
                               $("#new_topic").html(data);
@@ -1052,7 +1052,7 @@ $rel_prgrm_cmd2 = '';
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : detail_data,
-                            'url' : base_url+'/index.php?r=IDP/mid_save_data',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/mid_save_data',
                             success : function(data)
                             {
                                if (data) 
@@ -1080,7 +1080,7 @@ $rel_prgrm_cmd2 = '';
                                                     type : 'post',
                                                     datatype : 'html',
                                                     data : data,
-                                                    url : base_url+'/index.php?r=IDP/goalapproved',
+                                                    url : base_url+'/kritvapms/index.php?r=IDP/goalapproved',
                                                     success : function(data)
                                                     {
                                                         
@@ -1117,7 +1117,7 @@ $rel_prgrm_cmd2 = '';
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/del_extra_program',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/del_extra_program',
                                 success : function(data)
                                 {
                                     alert(data);
@@ -1317,7 +1317,7 @@ $rel_prgrm_cmd2 = '';
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                 success : function(data)
                                 {
                                     alert(data);

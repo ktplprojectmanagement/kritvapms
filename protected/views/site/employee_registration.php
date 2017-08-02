@@ -330,7 +330,7 @@
                                                 contentType: false,
                                                 'enctype': 'multipart/form-data',
                                                 'data' : form_data,
-                                                'url' : base_url+'/index.php/Newemployee/save',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/save',
                                                 success : function(data)
                                                 {     
                                                 //alert(data);
@@ -531,7 +531,7 @@
                                                 'type' : 'post',
                                                 'datatype' : 'json',
                                                 'data' : cluster_value,
-                                                'url' : base_url+'/index.php/Newemployee/cluster_head',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/cluster_head',
                                                
                                                 success : function(data)
                                                 {
@@ -553,7 +553,7 @@
                                                 'type' : 'post',
                                                 'datatype' : 'html',
                                                 'data' : grade,
-                                                'url' : base_url+'/index.php/Newemployee/Designation_change',
+                                                'url' : base_url+'/kritvapms/index.php/Newemployee/Designation_change',
                                                
                                                 success : function(data)
                                                 {
@@ -1285,7 +1285,7 @@
                                  dataType :'html',
                                  type :'post',
                                  data : state_name,
-                                 url : base_url+'/index.php/Newemployee/city_list',
+                                 url : base_url+'/kritvapms/index.php/Newemployee/city_list',
                                  success : function(data) {              
                                     $('#city_list').html(data);                              
                                 }

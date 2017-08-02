@@ -28,11 +28,11 @@ function save_detail_pdf()
                     type : 'post',
                     datatype : 'html',
                     data : data,
-                    url : base_url+'/index.php?r=Checkattach/check_view11',
+                    url : base_url+'/kritvapms/index.php?r=Checkattach/check_view11',
                     success : function(data)
                     {
 
-                        location.href = base_url+'/Goalsheet_docs/yearendgoalsheet'+'_'+$("#femp_name").text()+'_'+$("#lemp_name").text()+'.pdf'; 
+                        location.href = base_url+'/kritvapms/index.php/Goalsheet_docs/yearendgoalsheet'+'_'+$("#femp_name").text()+'_'+$("#lemp_name").text()+'.pdf'; 
                     }
                     });                 
                 }

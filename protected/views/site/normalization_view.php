@@ -403,7 +403,7 @@ chart2.draw(data, options);
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Normalization/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                     success : function(data)
                     {
                         //alert(data);
@@ -430,7 +430,7 @@ chart2.draw(data, options);
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Normalization/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                     success : function(data)
                     {
                         //alert(data);
@@ -457,7 +457,7 @@ chart2.draw(data, options);
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Normalization/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                     success : function(data)
                     {
                         //alert(data);
@@ -484,7 +484,7 @@ chart2.draw(data, options);
                 type : 'post',
                 datatype : 'html',
                 data : dept_name,
-                url : base_url+'/index.php?r=Normalization/getdata',
+                url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                 success : function(data)
                 {
                     //$('#dept_based_emp').html()
@@ -938,7 +938,7 @@ $("#err").text("");
                     type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=Normalization_process/normalize',
+                            url : base_url+'/kritvapms/index.php?r=Normalization_process/normalize',
                             success : function(data)
                             {
                               //alert(data);

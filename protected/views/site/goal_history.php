@@ -53,7 +53,7 @@ Yii::app()->controller->renderPartial('//site/all_js');
                                         type : 'post',
                                         datatype : 'html',
                                         data : data1,
-                                        url : base_url+'/index.php?r=Goal_history/getdata',
+                                        url : base_url+'/kritvapms/index.php?r=Goal_history/getdata',
                                         success : function(data)
                                         {
                                             //alert(data);

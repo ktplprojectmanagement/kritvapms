@@ -45,7 +45,7 @@ $.ajax({
 type : 'post',
 datatype : 'html',
 data : data,
-url : base_url+'/index.php?r=Checkattach/check_view2',
+url : base_url+'/kritvapms/index.php?r=Checkattach/check_view2',
 success : function(data)
 {
     alert(data);
@@ -59,7 +59,7 @@ $.ajax({
 type : 'post',
 datatype : 'html',
 data : data1,
-url : base_url+'/index.php?r=Checkattach/check_idp1',
+url : base_url+'/kritvapms/index.php?r=Checkattach/check_idp1',
 success : function(data)
 {
     //alert("dsfdsf");
@@ -88,7 +88,7 @@ function save_detail_pdf()
                     type : 'post',
                     datatype : 'html',
                     data : data,
-                    url : base_url+'/index.php?r=Checkattach/check_view2',
+                    url : base_url+'/kritvapms/index.php?r=Checkattach/check_view2',
                     success : function(data)
                     {
                         alert(data);
@@ -102,7 +102,7 @@ function save_detail_pdf()
                     type : 'post',
                     datatype : 'html',
                     data : data1,
-                    url : base_url+'/index.php?r=Checkattach/check_idp1',
+                    url : base_url+'/kritvapms/index.php?r=Checkattach/check_idp1',
                     success : function(data)
                     {
                         //alert("dsfdsf");
@@ -218,7 +218,7 @@ var review_comments = '';
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php?r=Midreview/midupdategoal',
+                                        url : base_url+'/kritvapms/index.php?r=Midreview/midupdategoal',
                                         success : function(data)
                                         {
                                              
@@ -335,7 +335,7 @@ var review_comments = '';
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : detail_data,
-                            'url' : base_url+'/index.php?r=IDP/mid_save_data',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/mid_save_data',
                             success : function(data)
                             {
                               //alert(data);
@@ -1955,7 +1955,7 @@ review of <?php if(isset($employee_data['0']['Emp_fname'])) { echo $employee_dat
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=Setgoals/updategoal',
+                            url : base_url+'/kritvapms/index.php?r=Setgoals/updategoal',
                             success : function(data)
                             {
                                $("#updation_spinner-"+id[1]).hide();
@@ -2008,7 +2008,7 @@ review of <?php if(isset($employee_data['0']['Emp_fname'])) { echo $employee_dat
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Midreview/submitidp',
+                                url : base_url+'/kritvapms/index.php?r=Midreview/submitidp',
                                 success : function(data)
                                 {
                                     if (data == 'success') 
@@ -2068,7 +2068,7 @@ review of <?php if(isset($employee_data['0']['Emp_fname'])) { echo $employee_dat
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Midreview/updateidp',
+                                url : base_url+'/kritvapms/index.php?r=Midreview/updateidp',
                                 success : function(data)
                                 {
                                     if(data == 1)
@@ -2098,7 +2098,7 @@ review of <?php if(isset($employee_data['0']['Emp_fname'])) { echo $employee_dat
                                 type : 'post',
                                 datatype : 'json',
                                 data : data,
-                                url : base_url+'/index.php?r=Midreview/get_idp',
+                                url : base_url+'/kritvapms/index.php?r=Midreview/get_idp',
                                 success : function(data)
                                 {
                                     var obj = $.parseJSON(data);var index = 0;
@@ -2207,7 +2207,7 @@ var data = {
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php?r=Midreview/midupdategoal',
+                                        url : base_url+'/kritvapms/index.php?r=Midreview/midupdategoal',
                                         success : function(data)
                                         {
                                              
@@ -2536,14 +2536,14 @@ if (chk_cmnts == 0 || chk_cmnts<$("#program_count").text())
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : detail_data,
-                            'url' : base_url+'/index.php?r=IDP/mid_save_data',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/mid_save_data',
                             success : function(data)
                             {
                               $.ajax({
                                       type : 'post',
                                       datatype : 'html',
                                       data : emp_id,
-                                      url : base_url+'/index.php?r=Midreview/final_goal_review1',
+                                      url : base_url+'/kritvapms/index.php?r=Midreview/final_goal_review1',
                                       success : function(data)
                                       {
                                           if (data == 1) 
@@ -2569,7 +2569,7 @@ if (chk_cmnts == 0 || chk_cmnts<$("#program_count").text())
                                                                               type : 'post',
                                                                               datatype : 'html',
                                                                               data : emp_id,
-                                                                              url : base_url+'/index.php?r=Midreview/sendmail',
+                                                                              url : base_url+'/kritvapms/index.php?r=Midreview/sendmail',
                                                                               success : function(data)
                                                                               {
                                                                                 //alert(data);
@@ -2580,7 +2580,7 @@ if (chk_cmnts == 0 || chk_cmnts<$("#program_count").text())
                                                                                   $("#err").text("Notification Sent to employee");
                                                                                   $("#err").addClass("alert-success"); 
                                                     jQuery("#static2").modal('show');                           
-                                                    //window.location.href = base_url+'/index.php?r=Midreview';                      
+                                                    //window.location.href = base_url+'/kritvapms/index.php?r=Midreview';                      
                                                                               }
                                                                           });
                                                                   });

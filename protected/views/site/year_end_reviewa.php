@@ -304,7 +304,7 @@ else
                                             contentType: false,
                                             enctype : 'multipart/form-data',
                                             data : formData,
-                                            url : base_url+'/index.php/Year_endreview/updatereview1',
+                                            url : base_url+'/kritvapms/index.php/Year_endreview/updatereview1',
                                             success : function(data)
                                             {
 //alert(data);
@@ -581,7 +581,7 @@ $("#err").css('border','1px solid #AB5454');
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php/Setgoals/kpivalue',
+                            url : base_url+'/kritvapms/index.php/Setgoals/kpivalue',
                             success : function(data)
                             {
                               
@@ -2344,7 +2344,7 @@ else
                                   type : 'post',
                                   datatype : 'html',
                                   data : emp_id,
-                                  url : base_url+'/index.php/Year_endreview/final_goal_review',
+                                  url : base_url+'/kritvapms/index.php/Year_endreview/final_goal_review',
                                   success : function(data)
                                   {
                                       
@@ -2357,7 +2357,7 @@ else
                                                   $.ajax({
                                                       type : 'post',
                                                       datatype : 'html',
-                                                      url : base_url+'/index.php/Year_endreview/goalnotification1',
+                                                      url : base_url+'/kritvapms/index.php/Year_endreview/goalnotification1',
                                                       success : function(data)
                                                       {
                                                        
@@ -3095,7 +3095,7 @@ if (emp_actual_achieve == '')
                                             contentType: false,
                                             enctype : 'multipart/form-data',
                                             data : formData,
-                                            url : base_url+'/index.php/Year_endreview/updatereview',
+                                            url : base_url+'/kritvapms/index.php/Year_endreview/updatereview',
                                             success : function(data)
                                             {
                                               jQuery("#static").modal('show');
@@ -3104,7 +3104,7 @@ if (emp_actual_achieve == '')
                                                   $.ajax({
                                                       type : 'post',
                                                       datatype : 'html',
-                                                      url : base_url+'/index.php/Year_endreview/goalnotification1',
+                                                      url : base_url+'/kritvapms/index.php/Year_endreview/goalnotification1',
                                                       success : function(data)
                                                       {
                                                         
@@ -3118,7 +3118,7 @@ $("#err").css('color','black');
 $("#err").css('border','1px solid #0DEA56');
                                                           $("#err").addClass("alert-success"); 
 window.setTimeout(function() {
-    window.location.href = base_url+'/index.php/User_dashboard';
+    window.location.href = base_url+'/kritvapms/index.php/User_dashboard';
 }, 1000);   
                     
                                                       }
@@ -3144,7 +3144,7 @@ var base_url = window.location.origin;
                                         type : 'post',
                                             datatype : 'html',
                                             data : data,
-                                            url : base_url+'/index.php/Year_endreview/updatereview_delfile1',
+                                            url : base_url+'/kritvapms/index.php/Year_endreview/updatereview_delfile1',
                                             success : function(data)
                                             {
 
@@ -3167,7 +3167,7 @@ KPI_id : id1[2]
                                         type : 'post',
                                             datatype : 'html',
                                             data : data,
-                                            url : base_url+'/index.php/Year_endreview/updatereview_delfile',
+                                            url : base_url+'/kritvapms/index.php/Year_endreview/updatereview_delfile',
                                             success : function(data)
                                             {
 
@@ -3230,7 +3230,7 @@ function save_detail_pdf()
                     type : 'post',
                     datatype : 'html',
                     data : data,
-                    url : base_url+'/index.php?r=Checkattach/check_view11',
+                    url : base_url+'/kritvapms/index.php?r=Checkattach/check_view11',
                     success : function(data)
                     {
 

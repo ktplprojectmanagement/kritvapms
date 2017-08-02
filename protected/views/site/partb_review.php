@@ -375,7 +375,7 @@ else
         type : 'post',
         datatype : 'html',
         data : record,
-        url : base_url+'/index.php?r=Manager_final_review/save_data',
+        url : base_url+'/kritvapms/index.php?r=Manager_final_review/save_data',
         success : function(data)
         {
            $("#updation_spinner").css('display','none');

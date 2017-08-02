@@ -882,7 +882,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : detail_data,
-                            'url' : base_url+'/index.php?r=IDP/save_data',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/save_data',
                             success : function(data)
                             {
                               jQuery("#static").modal('show');
@@ -892,7 +892,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                     'type' : 'post',
                                     'datatype' : 'html',
                                     'data' : detail_data,
-                                    'url' : base_url+'/index.php?r=IDP/send_for_approval',
+                                    'url' : base_url+'/kritvapms/index.php?r=IDP/send_for_approval',
                                     success : function(data)
                                     {
                                       jQuery("#static").modal('toggle');
@@ -1197,7 +1197,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                 success : function(data)
                                 {
                                    jQuery("#static").modal('show');
@@ -1207,7 +1207,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                     'type' : 'post',
                                     'datatype' : 'html',
                                     'data' : detail_data,
-                                    'url' : base_url+'/index.php?r=IDP/send_for_approval',
+                                    'url' : base_url+'/kritvapms/index.php?r=IDP/send_for_approval',
                                     success : function(data)
                                     {
                                       jQuery("#static").modal('toggle');
@@ -1216,7 +1216,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                     $("#err").addClass("alert-danger"); 
                                     $("#err").text("Notification Send to appraiser Successfully.");
                                       window.setTimeout(function() {
-    window.location.href = base_url+'/index.php/User_dashboard';
+    window.location.href = base_url+'/kritvapms/index.php/User_dashboard';
 }, 1000);  
                                     }
                                   });

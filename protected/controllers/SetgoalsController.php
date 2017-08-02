@@ -831,7 +831,7 @@ function actionsavekpi1()
 		$message->setBody('Message content here with HTML', 'text/html');
 		$message->subject = 'My Subject';
 		$message->addTo('demo.appraisel@gmail.com');
-		$message->from = 'kritvapms@kritva.in';
+		$message->from = 'hrdesk@kritva.com';
 		try {
 		  Yii::app()->mail->send($message);
 		  return true;
@@ -1563,8 +1563,8 @@ else
 		$data = array($kpi_data['0']['Employee_id']);
 		$employee_data1 = $emploee_data->get_employee_data($where,$data,$list);
 		$command = Yii::app()->db->createCommand();
-		// $query_result = $command->delete('kpi_auto_save', 'KPI_id=:KPI_id', array(':KPI_id'=>$_POST['KPI_id']));	
-	$query_result = 1;
+		$query_result = $command->delete('kpi_auto_save', 'KPI_id=:KPI_id', array(':KPI_id'=>$_POST['KPI_id']));	
+	//$query_result = 1;
 	
 		if($query_result == 1)
 		{
@@ -1896,7 +1896,7 @@ $notification_data->notification_type = 'Goal Approval_pending';
 		  $message->addTo($appriaser_1);
 		  $message->addTo($Employee_id);  		  
 		  // $message->from = $Employee_id;
-		 $message->from = 'kritvapms@kritva.in';
+		 $message->from = $Employee_id;
 		  $kra_update = array(
 		  	'KRA_status_flag' => '1', 
 		  );

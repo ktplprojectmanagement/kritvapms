@@ -58,7 +58,7 @@
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=Setgoals/kpi_del',
+                            url : base_url+'/kritvapms/index.php?r=Setgoals/kpi_del',
                             success : function(data)
                             {
                                 if(data == 'success')
@@ -117,7 +117,7 @@
                                             type : 'post',
                                             datatype : 'html',
                                             data : selected_unit1,
-                                            url : base_url+'/index.php?r=Setgoals/fetch_field',
+                                            url : base_url+'/kritvapms/index.php?r=Setgoals/fetch_field',
                                             success : function(data)
                                             {
                                                 var res = data.split(","); 
@@ -145,7 +145,7 @@
                                             type : 'post',
                                             datatype : 'html',
                                             data : kpi_value,
-                                            url : base_url+'/index.php?r=Setgoals/kpi_list',
+                                            url : base_url+'/kritvapms/index.php?r=Setgoals/kpi_list',
                                             success : function(data)
                                             {
                                                 if (data != '') 
@@ -316,7 +316,7 @@
                                             type : 'post',
                                             datatype : 'html',
                                             data : data1,
-                                            url : base_url+'/index.php?r=Goal_history/getdata1',
+                                            url : base_url+'/kritvapms/index.php?r=Goal_history/getdata1',
                                             success : function(data)
                                             {
                                                 //alert(data);
@@ -458,7 +458,7 @@
                                             type : 'post',
                                             datatype : 'html',
                                             data : number_of_kra,
-                                            url : base_url+'/index.php?r=Newemployee/getlist',
+                                            url : base_url+'/kritvapms/index.php?r=Newemployee/getlist',
                                             success : function(data)
                                             {
                                                 $("#get_goal_list").html(data);
@@ -1063,7 +1063,7 @@
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Setgoals/update_emp_kpi',
+                                url : base_url+'/kritvapms/index.php?r=Setgoals/update_emp_kpi',
                                 success : function(data)
                                 {                          
                                     if (data == "success")
@@ -1444,7 +1444,7 @@
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Setgoals/save_kpi',
+                                url : base_url+'/kritvapms/index.php?r=Setgoals/save_kpi',
                                 success : function(data)
                                 {
                                     // if (data != '') 
@@ -1675,7 +1675,7 @@
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Setgoals/savekpi',
+                                url : base_url+'/kritvapms/index.php?r=Setgoals/savekpi',
                                 success : function(data)
                                 {
                                     //alert(data);
@@ -1751,7 +1751,7 @@
                                     $.ajax({
                                         type : 'post',
                                         datatype : 'html',
-                                        url : base_url+'/index.php?r=Setgoals/sendmail',
+                                        url : base_url+'/kritvapms/index.php?r=Setgoals/sendmail',
                                         success : function(data)
                                         {
                                             //alert(data);
@@ -1782,7 +1782,7 @@
                             type : 'post',
                             datatype : 'json',
                             data : selected_unit,
-                            url : base_url+'/index.php?r=Setgoals/gettarget_value',
+                            url : base_url+'/kritvapms/index.php?r=Setgoals/gettarget_value',
                             success : function(data)
                             { 
                                 //alert(detail[2]);

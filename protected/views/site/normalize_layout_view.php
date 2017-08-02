@@ -807,7 +807,10 @@ $('#search-empnamechk2').on('keyup', function(){
     border:1px solid #154593;
     
 }
-.hidden
+/*.hidden
+{
+  
+}*/
 </style>
 
 

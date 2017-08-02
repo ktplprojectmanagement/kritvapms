@@ -80,16 +80,16 @@
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : data,
-                                'url' : base_url+'/index.php?r=Adminlogin/check',
+                                'url' : base_url+'/kritvapms/index.php?r=Adminlogin/check',
                                 success : function(data)
                                 {                 
                                     if (data == 'Valid')
                                     {
-                                        window.location.href = base_url+"/index.php?r=Admin_Dashboard";
+                                        window.location.href = base_url+"/kritvapms/index.php?r=Admin_Dashboard";
                                     }
                                     else
                                     {
-                                        alert("Invalid Login Credentials.")
+                                        alert("Invalid Login Credentials.");
                                     }
                                 }
                             });

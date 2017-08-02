@@ -2967,7 +2967,7 @@ emp_id : $("#emp_id_value1").text()
                                     type : 'post',
                                     datatype : 'html',
                                     data : data,
-                                    url : base_url+'/index.php/Year_endreview/get_promo_form',
+                                    url : base_url+'/kritvapms/index.php/Year_endreview/get_promo_form',
                                     success : function(data)
                                     {
                                        $("#promo_text").html(data);
@@ -2985,7 +2985,7 @@ emp_id : $("#emp_id_value1").text()
                                     type : 'post',
                                     datatype : 'html',
                                     data : data,
-                                    url : base_url+'/index.php/Year_endreview/del_promo_form',
+                                    url : base_url+'/kritvapms/index.php/Year_endreview/del_promo_form',
                                     success : function(data)
                                     {
                                        if (data == 'success') 
@@ -3008,7 +3008,7 @@ emp_id : $("#emp_id_value1").text()
                                     type : 'post',
                                     datatype : 'html',
                                     data : data,
-                                    url : base_url+'/index.php/Year_endreview/get_promo_form',
+                                    url : base_url+'/kritvapms/index.php/Year_endreview/get_promo_form',
                                     success : function(data)
                                     {
                                        $("#promo_text").html(data);
@@ -3031,7 +3031,7 @@ emp_id : $("#emp_id_value1").text()
                                     type : 'post',
                                     datatype : 'html',
                                     data : data,
-                                    url : base_url+'/index.php/Year_endreview/del_promo_form',
+                                    url : base_url+'/kritvapms/index.php/Year_endreview/del_promo_form',
                                     success : function(data)
                                     {$("#promo_text").html(""); 
                                        if (data == 'success') 
@@ -3652,7 +3652,7 @@ var data = {
                                     type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Year_endreview/updatereview_appraiser',
+                                        url : base_url+'/kritvapms/index.php/Year_endreview/updatereview_appraiser',
                                         success : function(data)
                                         {
 $("#success1").text('1');
@@ -3696,7 +3696,7 @@ var data = {
                                     type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Year_endreview/updatereview_appraiser',
+                                        url : base_url+'/kritvapms/index.php/Year_endreview/updatereview_appraiser',
                                         success : function(data)
                                         {
 $("#success1").text('1');
@@ -3731,7 +3731,7 @@ send_data();
                                     type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php?r=Year_endreview/updatereview',
+                                        url : base_url+'/kritvapms/index.php?r=Year_endreview/updatereview',
                                         success : function(data)
                                         {
                                             get_notify('Year end review updated succesfully');                                   
@@ -3752,7 +3752,7 @@ emp_id : $("#emp_id_value1").text()
                                                       type : 'post',
                                                       datatype : 'html',
                                                       data : data,
-                                                      url : base_url+'/index.php/Year_endreview/goalnotification',
+                                                      url : base_url+'/kritvapms/index.php/Year_endreview/goalnotification',
                                                       success : function(data)
                                                       {
                                                         //alert($("#emp_id_value").text());
@@ -3769,7 +3769,7 @@ $("#err").css('color','black');
 $("#err").css('border','1px solid #0DEA56');
                                                             
 window.setTimeout(function() {
-    window.location.href = base_url+'/index.php/Year_endreview/year_end_reviewlist';
+    window.location.href = base_url+'/kritvapms/index.php/Year_endreview/year_end_reviewlist';
 }, 2000);                     
                                                       }
                                                   });
@@ -3905,7 +3905,7 @@ else
         type : 'post',
         datatype : 'html',
         data : record,
-        url : base_url+'/index.php?r=Manager_final_review/save_data',
+        url : base_url+'/kritvapms/index.php?r=Manager_final_review/save_data',
         success : function(data)
         {
            $("#updation_spinner").css('display','none');
@@ -4100,7 +4100,7 @@ var data = {
                                     type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Year_endreview/updatereview_appraiser1',
+                                        url : base_url+'/kritvapms/index.php/Year_endreview/updatereview_appraiser1',
                                         success : function(data)
                                         {
                                          //  alert(data);
@@ -4146,7 +4146,7 @@ var data = {
                                     type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php/Year_endreview/updatereview_appraiser1',
+                                        url : base_url+'/kritvapms/index.php/Year_endreview/updatereview_appraiser1',
                                         success : function(data)
                                         {
                                           // alert(data);
@@ -4331,7 +4331,7 @@ var goal_set_year=$("#year1").text();
                                     type : 'post',
                                     datatype : 'html',
                                     data : data1,
-                                    url : base_url+'/index.php?r=Year_endreview/submit_data',
+                                    url : base_url+'/kritvapms/index.php?r=Year_endreview/submit_data',
                                     success : function(data)
                                     {
                                     alert(data);

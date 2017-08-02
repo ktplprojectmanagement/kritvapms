@@ -278,7 +278,7 @@
                                     type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php?r=Year_endreview/updatereview',
+                                        url : base_url+'/kritvapms/index.php?r=Year_endreview/updatereview',
                                         success : function(data)
                                         {
                                             get_notify('Year end review updated succesfully');                                   

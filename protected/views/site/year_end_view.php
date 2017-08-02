@@ -227,7 +227,7 @@ $(function(){
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php?r=Yearendreviewb/savedata',
+                                        url : base_url+'/kritvapms/index.php?r=Yearendreviewb/savedata',
                                         success : function(data)
                                         {                                           
                                             if ($.trim(data) == "Notification Send") 
@@ -321,7 +321,7 @@ $(function(){
                                         type : 'post',
                                         datatype : 'html',
                                         data : data,
-                                        url : base_url+'/index.php?r=Yearendreviewb/update_yer',
+                                        url : base_url+'/kritvapms/index.php?r=Yearendreviewb/update_yer',
                                         success : function(data)
                                         {
                                             $("#err").addClass("alert-success"); 

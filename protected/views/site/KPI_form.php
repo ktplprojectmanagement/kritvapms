@@ -17,7 +17,7 @@
                         $.ajax({
                         type : 'post',
                         data : data,
-                        url : base_url+'/index.php?r=KPI/kpi_del',
+                        url : base_url+'/kritvapms/index.php?r=KPI/kpi_del',
                         success : function(data)
                         {
                            // alert(data);
@@ -178,7 +178,7 @@ padding-top: 10px;
                         type : 'post',
                         datatype : 'html',
                         data : data,
-                        url : base_url+'/index.php?r=KPI/KPI_save',
+                        url : base_url+'/kritvapms/index.php?r=KPI/KPI_save',
                         success : function(data)
                         {
                           if (data != 'success') 

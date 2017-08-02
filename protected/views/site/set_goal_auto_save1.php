@@ -190,7 +190,7 @@ function save_idp_data()
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                 success : function(data)
                                 {
                                    //alert(data);
@@ -219,7 +219,7 @@ function save_idp_data()
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=Setgoals1/kpi_del',
+                            url : base_url+'/kritvapms/index.php?r=Setgoals1/kpi_del',
                             success : function(data)
                             {
                                 $(".count_goal").text(data);
@@ -569,7 +569,7 @@ $("body").on('scroll','.validate_field',function(){
                                             type : 'post',
                                             datatype : 'html',
                                             data : selected_unit1,
-                                            url : base_url+'/index.php?r=Setgoals1/fetch_field',
+                                            url : base_url+'/kritvapms/index.php?r=Setgoals1/fetch_field',
                                             success : function(data)
                                             {
                                                 var res = data.split(","); 
@@ -599,7 +599,7 @@ $("body").on('scroll','.validate_field',function(){
                                             type : 'post',
                                             datatype : 'html',
                                             data : kpi_value,
-                                            url : base_url+'/index.php?r=Setgoals1/kpi_list',
+                                            url : base_url+'/kritvapms/index.php?r=Setgoals1/kpi_list',
                                             success : function(data)
                                             {
                                                 if (data != '') 
@@ -866,7 +866,7 @@ if(isset($emp_data['0']['new_kra_create']) && $emp_data['0']['new_kra_create'] =
                                             type : 'post',
                                             datatype : 'html',
                                             data : number_of_kra,
-                                            url : base_url+'/index.php?r=Newemployee/getlist',
+                                            url : base_url+'/kritvapms/index.php?r=Newemployee/getlist',
                                             success : function(data)
                                             {
                                                 $("#get_goal_list").html(data);
@@ -2805,7 +2805,7 @@ else
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Setgoals1/update_kpi',
+                                url : base_url+'/kritvapms/index.php?r=Setgoals1/update_kpi',
                                 success : function(data)
                                 {                                   
                                     if (data == "success")
@@ -3190,7 +3190,7 @@ else
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Setgoals1/save_kpi',
+                                url : base_url+'/kritvapms/index.php?r=Setgoals1/save_kpi',
                                 success : function(data)
                                 {
                                     // if (data != '') 
@@ -3645,7 +3645,7 @@ else
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=Setgoals1/savekpi',
+                                url : base_url+'/kritvapms/index.php?r=Setgoals1/savekpi',
                                 success : function(data)
                                 {
                                     //alert(data);
@@ -4009,7 +4009,7 @@ else
                                                 'type' : 'post',
                                                 'datatype' : 'html',
                                                 'data' : detail_data,
-                                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                                 success : function(data)
                                                 {
                                                     $("#project_title1").css('border-color','');
@@ -4028,7 +4028,7 @@ else
                                                             $.ajax({
                                                                 type : 'post',
                                                                 datatype : 'html',
-                                                                url : base_url+'/index.php?r=Setgoals1/sendmail',
+                                                                url : base_url+'/kritvapms/index.php?r=Setgoals1/sendmail',
                                                                 success : function(data)
                                                                 {
                                                                     //alert(data);
@@ -4071,7 +4071,7 @@ else
                             type : 'post',
                             datatype : 'json',
                             data : selected_unit,
-                            url : base_url+'/index.php?r=Setgoals1/gettarget_value',
+                            url : base_url+'/kritvapms/index.php?r=Setgoals1/gettarget_value',
                             success : function(data)
                             { 
                                 //alert(detail[2]);
@@ -4229,7 +4229,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : detail_data,
-                            'url' : base_url+'/index.php?r=IDP/save_data',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/save_data',
                             success : function(data)
                             {
                               jQuery("#static").modal('show');
@@ -4239,7 +4239,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                     'type' : 'post',
                                     'datatype' : 'html',
                                     'data' : detail_data,
-                                    'url' : base_url+'/index.php?r=IDP/send_for_approval',
+                                    'url' : base_url+'/kritvapms/index.php?r=IDP/send_for_approval',
                                     success : function(data)
                                     {
                                       jQuery("#static").modal('toggle');
@@ -4532,7 +4532,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                 success : function(data)
                                 {
                                     alert(data);
@@ -4543,7 +4543,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                     'type' : 'post',
                                     'datatype' : 'html',
                                     'data' : detail_data,
-                                    'url' : base_url+'/index.php?r=IDP/send_for_approval',
+                                    'url' : base_url+'/kritvapms/index.php?r=IDP/send_for_approval',
                                     success : function(data)
                                     {
                                       jQuery("#static").modal('toggle');
@@ -4552,7 +4552,7 @@ else if (chk_cmnts == 0 || chk_compl<get_list_value.length)
                                     $("#err").addClass("alert-danger"); 
                                     $("#err").text("Notification Send to appraiser Successfully.");
                                       window.setTimeout(function() {
-    window.location.href = base_url+'/index.php/User_dashboard';
+    window.location.href = base_url+'/kritvapms/index.php/User_dashboard';
 }, 1000);  
                                     }
                                   });

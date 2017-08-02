@@ -91,7 +91,7 @@ padding-top: 10px;
                         $.ajax({
                         type : 'post',
                         data : data,
-                        url : base_url+'/index.php?r=KRA/kra_del',
+                        url : base_url+'/kritvapms/index.php?r=KRA/kra_del',
                         success : function(data)
                         {
                             if(data == 1)
@@ -123,7 +123,7 @@ padding-top: 10px;
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=KRA/getdata',
+                    url : base_url+'/kritvapms/index.php?r=KRA/getdata',
                     success : function(data)
                     {
                        $('#dept_based_emp').html(data);  
@@ -149,7 +149,7 @@ padding-top: 10px;
                 type : 'post',
                 datatype : 'html',
                 data : dept_name,
-                url : base_url+'/index.php?r=KRA/getdata',
+                url : base_url+'/kritvapms/index.php?r=KRA/getdata',
                 success : function(data)
                 {
                    $('#dept_based_emp').html(data);  
@@ -211,7 +211,7 @@ padding-top: 10px;
                     type : 'post',
                     datatype : 'html',
                     data : data,
-                    url : base_url+'/index.php?r=KRA/kra_requst',
+                    url : base_url+'/kritvapms/index.php?r=KRA/kra_requst',
                     success : function(data)
                     {
                        if (data !=0) 
@@ -268,7 +268,7 @@ $("#err").text("");
                         $.ajax({
                             type : 'post',
                             data : data,
-                            url : base_url+'/index.php?r=KRA/kra_update',
+                            url : base_url+'/kritvapms/index.php?r=KRA/kra_update',
                             success : function(data)
                             {
                                // alert(data);
@@ -336,7 +336,7 @@ $("#err").text("");
                                                     $.ajax({
                                                         type : 'post',
                                                         data : data,
-                                                        url : base_url+'/index.php?r=KRA/kra_update',
+                                                        url : base_url+'/kritvapms/index.php?r=KRA/kra_update',
                                                         success : function(data)
                                                         {
                                                             alert(data);
@@ -359,7 +359,7 @@ $("#err").text("");
                     //     $.ajax({
                     //         type : 'post',
                     //         data : data,
-                    //         url : base_url+'/index.php?r=KRA/kra_update',
+                    //         url : base_url+'/kritvapms/index.php?r=KRA/kra_update',
                     //         success : function(data)
                     //         {
                     //             $("#err").text('');                                                        
@@ -425,7 +425,7 @@ $("#err").text("");
                     //                                 $.ajax({
                     //                                     type : 'post',
                     //                                     data : data,
-                    //                                     url : base_url+'/index.php?r=KRA/kra_update',
+                    //                                     url : base_url+'/kritvapms/index.php?r=KRA/kra_update',
                     //                                     success : function(data)
                     //                                     {
                     //                                         alert(data);
@@ -468,7 +468,7 @@ $("#err").text("");
                         $.ajax({
                             type : 'post',
                             data : data,
-                            url : base_url+'/index.php?r=KRA/kra_update',
+                            url : base_url+'/kritvapms/index.php?r=KRA/kra_update',
                             success : function(data)
                             {
                                 $("#err").show();
@@ -507,7 +507,7 @@ $("#err").text("");
                                     'type' : 'post',
                                     'datatype' : 'json',
                                     'data' : data,
-                                    'url' : base_url+'/index.php?r=KRA/save_kra',
+                                    'url' : base_url+'/kritvapms/index.php?r=KRA/save_kra',
                                      success : function(data)
                                      {
                                         alert(data);
@@ -561,7 +561,7 @@ $("#err").text("");
                                                     $.ajax({
                                                         type : 'post',
                                                         data : data,
-                                                        url : base_url+'/index.php?r=KRA/save_kra',
+                                                        url : base_url+'/kritvapms/index.php?r=KRA/save_kra',
                                                         success : function(data)
                                                         {
                                                             $("#err").show();

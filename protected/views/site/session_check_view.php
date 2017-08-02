@@ -14,7 +14,7 @@ function reset_interval() {
   }
 }
 function auto_logout() {
-   window.location.href=base_url+'/index.php?r=Login/employee_logout';
+   window.location.href=base_url+'/kritvapms/index.php?r=Login/employee_logout';
 }  
  </script>
 

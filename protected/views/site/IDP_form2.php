@@ -998,7 +998,7 @@ with <?php if(isset($emp_data['0']['Emp_fname'])) { echo $emp_data['0']['Emp_fna
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : data,
-                            'url' : base_url+'/index.php?r=IDP/add_program',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/add_program',
                             success : function(data)
                             {
                               $("#new_topic").html(data);
@@ -1268,7 +1268,7 @@ else if (($(".project_mid_review").val() != undefined || $(".project_mid_review"
                             'type' : 'post',
                             'datatype' : 'html',
                             'data' : detail_data,
-                            'url' : base_url+'/index.php?r=IDP/mid_save_data',
+                            'url' : base_url+'/kritvapms/index.php?r=IDP/mid_save_data',
                             success : function(data)
                             {
                                if (data) 
@@ -1288,7 +1288,7 @@ else if (($(".project_mid_review").val() != undefined || $(".project_mid_review"
 	                                            type : 'post',
 	                                            datatype : 'html',
 	                                            data : data,
-	                                            url : base_url+'/index.php?r=IDP/mid_idp_approval',
+	                                            url : base_url+'/kritvapms/index.php?r=IDP/mid_idp_approval',
 	                                            success : function(data)
 	                                            {
 	                                                //alert(data);
@@ -1315,7 +1315,7 @@ else if (($(".project_mid_review").val() != undefined || $(".project_mid_review"
                                                     type : 'post',
                                                     datatype : 'html',
                                                     data : data,
-                                                    url : base_url+'/index.php?r=IDP/mid_idp_approval',
+                                                    url : base_url+'/kritvapms/index.php?r=IDP/mid_idp_approval',
                                                     success : function(data)
                                                     {
                                                        //alert(data);
@@ -1352,7 +1352,7 @@ else if (($(".project_mid_review").val() != undefined || $(".project_mid_review"
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/del_extra_program',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/del_extra_program',
                                 success : function(data)
                                 {
                                     alert(data);
@@ -1552,7 +1552,7 @@ else if (($(".project_mid_review").val() != undefined || $(".project_mid_review"
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : detail_data,
-                                'url' : base_url+'/index.php?r=IDP/save_data1',
+                                'url' : base_url+'/kritvapms/index.php?r=IDP/save_data1',
                                 success : function(data)
                                 {
                                     alert(data);

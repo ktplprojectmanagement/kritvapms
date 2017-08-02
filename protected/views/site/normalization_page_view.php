@@ -241,7 +241,7 @@ chart1.draw(data, options);
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Normalization/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                     success : function(data)
                     {
                         //alert(data);
@@ -268,7 +268,7 @@ chart1.draw(data, options);
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Normalization/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                     success : function(data)
                     {
                         //alert(data);
@@ -295,7 +295,7 @@ chart1.draw(data, options);
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Normalization/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                     success : function(data)
                     {
                         //alert(data);
@@ -322,7 +322,7 @@ chart1.draw(data, options);
                 type : 'post',
                 datatype : 'html',
                 data : dept_name,
-                url : base_url+'/index.php?r=Normalization/getdata',
+                url : base_url+'/kritvapms/index.php?r=Normalization/getdata',
                 success : function(data)
                 {
                     //$('#dept_based_emp').html()

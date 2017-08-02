@@ -292,7 +292,7 @@ for(var i = 0;i<ids.length;i++){
             type : 'post',
             datatype : 'html',
             data : data,
-            url : base_url+'/index.php/Promotion/updatepromo',
+            url : base_url+'/kritvapms/index.php/Promotion/updatepromo',
             success : function(data)
             {
              // alert(data);

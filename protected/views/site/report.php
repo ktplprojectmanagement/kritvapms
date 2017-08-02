@@ -169,7 +169,7 @@
                             dataType :'html',
                              type :'post',
                              data : data,
-                             url : base_url+'/index.php?r=Generatereport/delete_report',
+                             url : base_url+'/kritvapms/index.php?r=Generatereport/delete_report',
                              'success' : function(data) {
                                 if (data == 'success') 
                                 {
@@ -177,7 +177,7 @@
                                 }                                
                             }
                         });
-                        })
+                        });
                        
                         $('.report_data').find('tbody').css('width','auto','max-width','auto');
                         $("#generate_button").click(function(){
@@ -218,7 +218,7 @@
                                             dataType :'html',
                                              type :'post',
                                              data : content,
-                                             url : base_url+'/index.php?r=Generatereport/get',
+                                             url : base_url+'/kritvapms/index.php?r=Generatereport/get',
                                              'success' : function(data) {
                                                 $("#sample_1").load(location.href + " #sample_1");
                                                 jQuery("#static").modal('hide');

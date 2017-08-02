@@ -47,11 +47,12 @@ return array(
                 'class' => 'ext.yii-mail.YiiMail',
 			     'transportType'=>'smtp',
 			     'transportOptions'=>array(
-			       'host'=>'mail.kritva.in',
-                    'username'=>'kritvapms@kritva.in',
-                    'password'=>'p@$$w0rD789',
-                    'port'=>'465',
-                    'encryption' => 'ssl'
+			       'host'=>'webmail.kritva.com',
+                    'username'=>'hrdesk@kritva.com',
+                    'password'=>'hrdesk@kritva',
+                    'port'=>'587',
+                    // 'encryption' => 'tls', 
+			                    
 			     ),
 			    'viewPath' => 'application.views.mail',
         ),

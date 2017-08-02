@@ -124,7 +124,7 @@ font-weight: bold;
                         type : 'post',
                         datatype : 'html',
                         data : data,
-                        url : base_url+'/index.php?r=Login/reset_user_password',
+                        url : base_url+'/kritvapms/index.php?r=Login/reset_user_password',
                         success : function(data)
                         { 
                         $("#updation_spinner").css('display','none'); 
@@ -186,7 +186,7 @@ font-weight: bold;
                         type : 'post',
                         datatype : 'html',
                         data : data,
-                        url : base_url+'/index.php?r=Reset_user_password/rsest',
+                        url : base_url+'/kritvapms/index.php?r=Reset_user_password/rsest',
                         success : function(data)
                         { 
                             //alert(data);
@@ -196,7 +196,7 @@ font-weight: bold;
                                 $("#err").show();  
                                 $("#err").fadeOut(6000);
                                 $("#error_value").text("Password updated successfully");
-                               // window.location.href = base_url+'/index.php?r=Login';
+                               // window.location.href = base_url+'/kritvapms/index.php?r=Login';
                             }
                             else if(data == "error occure")
                             {

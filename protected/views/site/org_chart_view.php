@@ -83,7 +83,7 @@ padding-top: 10px;
                     type : 'post',
                     datatype : 'html',
                     data : dept_name,
-                    url : base_url+'/index.php?r=Organization_flow/getdata',
+                    url : base_url+'/kritvapms/index.php?r=Organization_flow/getdata',
                     success : function(data)
                     {
                        $('#dept_based_emp').html(data);
@@ -110,7 +110,7 @@ padding-top: 10px;
                 type : 'post',
                 datatype : 'html',
                 data : dept_name,
-                url : base_url+'/index.php?r=Organization_flow/getdata',
+                url : base_url+'/kritvapms/index.php?r=Organization_flow/getdata',
                 success : function(data)
                 {
                    $('#dept_based_emp').html(data);
@@ -189,7 +189,7 @@ padding-top: 10px;
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=Organization_flow/chng_dept_head_data',
+                            url : base_url+'/kritvapms/index.php?r=Organization_flow/chng_dept_head_data',
                             success : function(data)
                             {
                                 $("#err").show();  
@@ -215,7 +215,7 @@ padding-top: 10px;
                 type : 'post',
                 datatype : 'html',
                 data : dept_name,
-                url : base_url+'/index.php?r=Organization_flow/chng_dept_head',
+                url : base_url+'/kritvapms/index.php?r=Organization_flow/chng_dept_head',
                 success : function(data)
                 {
                    // alert(data);

@@ -104,17 +104,17 @@ font-weight: bold;
                                 'type' : 'post',
                                 'datatype' : 'html',
                                 'data' : data,
-                                'url' : base_url+'/index.php?r=Login/check',
+                                'url' : base_url+'/kritvapms/index.php?r=Login/check',
                                 success : function(data)
                                 {                       
                                     if (data == 'Valid')
                                     {
-                                        window.location.href = base_url+"/index.php?r=Login/dashboard";
+                                        window.location.href = base_url+"/kritvapms/index.php?r=Login/dashboard";
                                     }
                                     else if(data == 'already_login')
                                     {
                                         //$("#already_login").text("User already login");
-                                        window.location.href=base_url+'/index.php?r=Login';
+                                        window.location.href=base_url+'/kritvapms/index.php?r=Login';
                                     }
                                     else
                                     {
@@ -184,7 +184,7 @@ font-weight: bold;
                         type : 'post',
                         datatype : 'html',
                         data : data,
-                        url : base_url+'/index.php?r=Reset_password/rsest1',
+                        url : base_url+'/kritvapms/index.php?r=Reset_password/rsest1',
                         success : function(data)
                         { 
                             $("#updation_spinner").css('display','none');                                                        
@@ -194,9 +194,9 @@ font-weight: bold;
 					$("#err").fadeOut(5000);
 					$("#error_value").text("Password updated successfully.");
 window.setTimeout(function() {
-    window.location.href = base_url+'/index.php/Adminlogin';
+    window.location.href = base_url+'/kritvapms/index.php/Adminlogin';
 }, 1000);  
-                                //window.location.href = base_url+'/index.php?r=Adminlogin';
+                                //window.location.href = base_url+'/kritvapms/index.php?r=Adminlogin';
                             }
                             else if(data == "error occure")
                             {

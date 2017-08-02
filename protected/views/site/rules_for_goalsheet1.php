@@ -166,7 +166,7 @@
     $('#send_for_goalsheet').click(function(){
         
          var base_url = window.location.origin;
-         var url=base_url+'/index.php/Setgoals';
+         var url=base_url+'/kritvapms/index.php/Setgoals';
          
       if($("#term_condition:checked").val() != 'term_condition')
                                             {

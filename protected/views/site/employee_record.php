@@ -185,7 +185,7 @@ margin-left: -105px;"></label>
                     contentType: false,
                     'enctype': 'multipart/form-data',
                     'data' : formData,
-                    'url' : base_url+'/index.php?r=Export/',
+                    'url' : base_url+'/kritvapms/index.php?r=Export/',
                     success : function(data)
                     {
                         if (data == 'Successfully Uploaded') 
@@ -377,7 +377,7 @@ margin-left: -105px;"></label>
                                 dataType :'html',
                                  type :'post',
                                  data : content,
-                                 url : base_url+'/index.php?r=Settingpage/save',
+                                 url : base_url+'/kritvapms/index.php?r=Settingpage/save',
                                  'success' : function(data) {              
                                     if (click == 0) 
                                     {

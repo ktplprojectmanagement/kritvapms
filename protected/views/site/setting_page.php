@@ -334,7 +334,7 @@ if(string_data[i] == 'dis_set_tab_active-date')
                 $.ajax({
                    type: "POST",
                    data: {content_value:content_value,content_array:content_array},
-                   url: base_url+'/index.php?r=Settings/set_setting',
+                   url: base_url+'/kritvapms/index.php?r=Settings/set_setting',
                    success: function(data){
                      $("#err").show();  
                         $("#err").fadeOut(6000);

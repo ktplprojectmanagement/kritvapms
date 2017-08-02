@@ -249,7 +249,7 @@ padding-top: 10px;
                                     type : 'post',
                                     datatype : 'html',
                                     data : data,
-                                    url : base_url+'/index.php?r=Promotion/submit_data',
+                                    url : base_url+'/kritvapms/index.php?r=Promotion/submit_data',
                                     success : function(data)
                                     {
                                     // alert(data);

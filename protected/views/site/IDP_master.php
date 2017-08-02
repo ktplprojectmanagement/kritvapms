@@ -585,7 +585,7 @@ padding-top: 10px;*/
                                 type : 'post',
                                 datatype : 'html',
                                 data : data,
-                                url : base_url+'/index.php?r=IDP_master/del_record',
+                                url : base_url+'/kritvapms/index.php?r=IDP_master/del_record',
                                 success : function(data)
                                 {
                                     //alert(data);
@@ -668,7 +668,7 @@ padding-top: 10px;*/
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=IDP_master/add',
+                            url : base_url+'/kritvapms/index.php?r=IDP_master/add',
                             success : function(data)
                             {
                                 //alert(data);
@@ -709,7 +709,7 @@ padding-top: 10px;*/
           type:'post',
           datatype:'html',
           data:data,
-          url:base_url+'/index.php/IDP_master/edit',
+          url:base_url+'/kritvapms/index.php/IDP_master/edit',
           success:function(data)
           {
               alert(data);
@@ -792,7 +792,7 @@ padding-top: 10px;*/
                             type : 'post',
                             datatype : 'html',
                             data : data,
-                            url : base_url+'/index.php?r=IDP_master/update',
+                            url : base_url+'/kritvapms/index.php?r=IDP_master/update',
                             success : function(data)
                             {
                                 //alert(data);
