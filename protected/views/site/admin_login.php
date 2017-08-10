@@ -279,7 +279,7 @@ var base_url = window.location.origin;
                                         }
                                         else if(data == 'reset_pending')
                                         {
-                                            window.location.href=base_url+'/kritvapms/index.php/Reset_password/Index/';
+                                            window.location.href=base_url+'/kritvapms/index.php/Login/reset_link';
                                         }
                                         else
                                         {

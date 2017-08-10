@@ -182,6 +182,7 @@ font-weight: bold;
                         'password' :  $('.curpassword').val(),
                         'username' : $("#emp_id_value").text()
                        };
+                       //alert($('.password_value').val());
                        $.ajax({
                         type : 'post',
                         datatype : 'html',
@@ -189,7 +190,7 @@ font-weight: bold;
                         url : base_url+'/kritvapms/index.php?r=Reset_user_password/rsest',
                         success : function(data)
                         { 
-                            //alert(data);
+                           // alert(data);
                             $("#updation_spinner").css('display','none');                                                        
                             if (data == "success")
                             {

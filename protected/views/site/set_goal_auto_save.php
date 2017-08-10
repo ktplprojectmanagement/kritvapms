@@ -1065,7 +1065,7 @@ $("body").on('scroll','.validate_field',function(){
                                     <h4 class="modal-title">Confirmation</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p> Are you sure you want to send goalsheet & IDP to your manager? </p>
+                                    <p> Are you sure you want to send goalsheet to your manager? </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" data-dismiss="modal" class="btn dark btn-outline">Cancel</button>
@@ -2360,7 +2360,7 @@ $set_flag1 = "'disabled'= 'false'";
 <div class="row">
 <div class="col-md-12" style="margin-top: 58px;">
                                </div>
-                                <div class="col-md-12" style="margin-top: -18px;">
+                                <div class="col-md-12" style="margin-top: -18px;display:none">
                                     <!-- BEGIN PORTLET-->
                                     <div class="portlet light form-fit" id="refresh_class">
                                         <div class="portlet-title">
@@ -3121,7 +3121,7 @@ else
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="display:none">
                                     <!-- BEGIN PORTLET-->
                                     <div class="portlet light form-fit ">                                        
                                         <div class="portlet-body form">
@@ -3213,7 +3213,7 @@ else
                                          <div class="btn-group col-md-12" style="float:left">
                     <?php if((isset($kpi_data['0']['kra_complete_flag']) && $kpi_data['0']['kra_complete_flag']==0) || (isset($emp_data[0]['new_kra_create']) && $emp_data[0]['new_kra_create'] == 'on')) { ?>
                     <input name="term_condition" value="term_condition" id="term_condition" type="checkbox">
-                    <lable id="blink_me" style="color: red;"> I agree to the goals and IDP filled above
+                    <lable id="blink_me" style="color: red;"> I agree to the goalsheet filled above
 </lable>
                                         <?php echo CHtml::button('Send to manager for approval',array('class'=>'btn border-blue-soft send_for_appraisal','style'=>'float:right','id'=>'send_for_appraisal')); ?><?php } ?>
                                         <?php } ?>
@@ -5144,16 +5144,16 @@ else
                     {
                         $('#err').animate({top:$(window).scrollTop()+"px" },{queue: false, duration: 350});  
                     });
-                    if(total_goal < 4)
-                    {
-                        $("#err").show();  
-                        $("#err").fadeOut(6000);
-                        $("#error_value").text("Minimum 4 KRA Required.");
-                        $("#err").addClass("alert-danger");
-                         $("html, body").animate({ scrollTop: 0 }, "slow");
-                    }                    
-                    else
-                    {
+                    // if(total_goal < 4)
+                    // {
+                    //     $("#err").show();  
+                    //     $("#err").fadeOut(6000);
+                    //     $("#error_value").text("Minimum 4 KRA Required.");
+                    //     $("#err").addClass("alert-danger");
+                    //      $("html, body").animate({ scrollTop: 0 }, "slow");
+                    // }                    
+                    // else
+                    // {
                         for (var i = 1; i <= total_goal; i++) 
                         {
                             
@@ -5169,22 +5169,7 @@ else
                         }
                             //alert($('#cnt_kra_cat_people1').text()); alert($('#cnt_kra_cat_process1').text()); alert($('#cnt_kra_cat_customer1').text()); alert($('#cnt_kra_cat_business1').text());
                             var kra_cat=parseInt($('#kra_cat_cnt').text());
-                        if(!($('#cnt_kra_cat_people1').text() == 1 && $('#cnt_kra_cat_process1').text() == 1 && $('#cnt_kra_cat_customer1').text() == 1 && $('#cnt_kra_cat_business1').text() == 1))
-                        {
-                             $("#err").show();  
-                            $("#err").fadeOut(6000);
-                            $("#error_value").text("Selection of all KRA category is mandatory");
-                            $("#err").addClass("alert-danger");
-                             $("html, body").animate({ scrollTop: 0 }, "slow");
-                        }
-                       else if(kra_cat!= 0){
-                            $("#err").show();  
-                            $("#err").fadeOut(6000);
-                            $("#error_value").text(" KRA category should not repeat more than 2 times.");
-                            $("#err").addClass("alert-danger");
-                             $("html, body").animate({ scrollTop: 0 }, "slow");
-                       }
-                       else if (total!=100) 
+                        if (total!=100) 
                         {
                             $("#err").show();  
                             $("#err").fadeOut(6000);
@@ -5576,7 +5561,7 @@ else
                                     }                    
                             
                           
-                        }
+                        // }
                     }
                     });
                 });

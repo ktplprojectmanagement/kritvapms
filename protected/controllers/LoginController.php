@@ -350,7 +350,11 @@ public function actionarray_column(array $input, $columnKey, $indexKey = null) {
 	public function actionreset_link()
 	{
 		$model = new LoginForm;	
-		$this->render('//site/email_link_send',array('model'=>$model));
+		$this->render('//site/script_file');
+		$this->render('//site/session_check_view');
+		$this->render('//site/header_view_layout');
+		$this->render('//site/reset_user_password',array('employee_id'=>Yii::app()->user->getState('Employee_id')));
+		$this->render('//site/footer_view_layout');
 	}
 
 	function actioncheck_time()

@@ -137,9 +137,9 @@ $command->bindValue(":Employee_id",$data['username'],PDO::PARAM_STR);
 	{
 		//print_r($data);die();
 		$connection=Yii::app()->db;
-		$sql = "select * from login where username = :username";
+		$sql = "select * from login where Employee_id = :Employee_id";
 		$command=$connection->createCommand($sql);
-		$command->bindValue(":username",$data['username'],PDO::PARAM_STR);
+		$command->bindValue(":Employee_id",$data['username'],PDO::PARAM_STR);
 		//$command->bindValue(":password",md5($data['password']),PDO::PARAM_STR);
 		//$result = $command->execute();
 		$find_result = $command->queryRow();

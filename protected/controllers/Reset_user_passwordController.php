@@ -5,6 +5,7 @@ class Reset_user_passwordController extends Controller
 	
 	public function actionIndex($employee_id = null)
 	{
+		//print_r("dfsdfds");die();
 		$emploee_data1 =new EmployeeForm;
 		$model = new LoginForm;	
 		$where1 = 'where Employee_id = :Employee_id';
@@ -39,8 +40,8 @@ class Reset_user_passwordController extends Controller
 		//print_r($_POST['username']);die();
 		$model = new LoginForm;	
 		$emploee_data1 =new EmployeeForm;
-		$where1 = 'where Email_id = :Email_id';
-		$list1 = array('Email_id');
+		$where1 = 'where Employee_id = :Employee_id';
+		$list1 = array('Employee_id');
 		$data2 = array($_POST['username']);
 		$Email_id_data = $emploee_data1->get_employee_data($where1,$data2,$list1);
 
@@ -48,7 +49,7 @@ class Reset_user_passwordController extends Controller
 	'username' => $_POST['username'],
 );
 		$login_data = $model->check_login_user($data);
-
+//print_r($login_data);die();
 		if (isset($login_data) && count($login_data)>0) {
 
 			if($login_data['password'] == md5($_POST['password']))
