@@ -26,6 +26,7 @@
         <!-- BEGIN PAGE LEVEL STYLES -->
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/pages/css/login-5.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/pages/css/login.min.css" rel="stylesheet" type="text/css" />
+        
         <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <!-- END THEME LAYOUT STYLES -->
@@ -150,6 +151,7 @@ color: rgb(50, 197, 210);">Forgot Password?</a></div>
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
         $(function(){
+           
 $("#LoginForm_password").keypress(function(e){
 var key = e.which;
  if(key == 13)  // the enter key code

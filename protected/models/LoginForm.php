@@ -135,7 +135,7 @@ $command->bindValue(":Employee_id",$data['username'],PDO::PARAM_STR);
 
 	public function check_login_user($data)
 	{
-		//print_r($data);die();
+		
 		$connection=Yii::app()->db;
 		$sql = "select * from login where Employee_id = :Employee_id";
 		$command=$connection->createCommand($sql);

@@ -1,3 +1,4 @@
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 <script>
 
 $(function(){
@@ -2593,7 +2594,7 @@ $(document).ready(function(){
                             });
                     });
                    
-$(".update_status").click(function(){ 
+$(".update_status").click(function(){
 
 for (var i = 1; i < 3; i++) {
     

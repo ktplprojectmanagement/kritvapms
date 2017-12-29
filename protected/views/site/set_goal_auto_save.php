@@ -6114,7 +6114,7 @@ function save_detail_pdf()
                     url : base_url+'/kritvapms/index.php?r=Checkattach/check_goal_idp',
                     success : function(data)
                     {
-
+                        //alert(data);
                         location.href = base_url+'/kritvapms/Goalsheet_docs/goalsheet'+'_'+$("#femp_name").text()+'_'+$("#lemp_name").text()+$('#yr').text()+'.pdf'; 
                     }
                     });                 

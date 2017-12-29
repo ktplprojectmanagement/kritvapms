@@ -1513,7 +1513,7 @@ else if($("#mask_number-"+last_id_value).find(':selected').val() == 'Days')
                                     <h4 class="modal-title">Confirmation</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p> Are you sure you want to approve <?php if(isset($emp_data['0']['Emp_fname'])) { echo $emp_data['0']['Emp_fname']." ".$emp_data['0']['Emp_lname']; } ?> goalsheet & IDP? </p>
+                                    <p> Are you sure you want to approve <?php if(isset($emp_data['0']['Emp_fname'])) { echo $emp_data['0']['Emp_fname']." ".$emp_data['0']['Emp_lname']; } ?> goalsheet? </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" data-dismiss="modal" class="btn dark btn-outline" style="float:left">Cancel</button>
@@ -2431,7 +2431,7 @@ $set_flag1 = "'disabled'= 'false'";
                             <div class="row" <?php if(isset($show_idp) && count($show_idp)>0 && $show_idp!= ''){ ?>style="display:block"<?php }else{ ?>style="display:none"<?php } ?>>
 <div class="col-md-12" style="margin-top: 58px;">
                                 </div>
-                                <div class="col-md-12" style="margin-top: -18px;">
+                                <div class="col-md-12" style="margin-top: -18px;display:none">
                                     <!-- BEGIN PORTLET-->
                                     <div class="portlet light form-fit" id="refresh_class">
                                         <div class="portlet-title">
@@ -2802,7 +2802,7 @@ else
                                 
 
 
-                            <div class="row">
+                            <div class="row" style="display:none">
                                 <div class="col-md-12">
                                     <!-- BEGIN PORTLET-->
                                     <div class="portlet light form-fit error_row_chk1">
@@ -3009,7 +3009,7 @@ else
                                                     <span class="caption-subject  bold uppercase" style="color:white;font-size: 12px;">Part C: Development through action learning projects</span><br>
                                                     </div>
                                                    </div>
-                                                <div class="form-group">
+                                                <div class="form-group" style="display:none">
                                                     <label class="col-md-3 control-label bold">Project Title</label>
                                                     <div class="col-md-9">
                                                      <?php 
@@ -3118,7 +3118,7 @@ else
                                     <!-- END PORTLET-->
                                 </div>
                             </div>
-                            <div class="row" <?php if(isset($show_idp) && count($show_idp)>0){ ?>style="display:block"<?php }else{ ?>style="display:none"<?php } ?>>
+                            <div class="row" <?php if(isset($show_idp) && count($show_idp)>0){ ?>style="display:none"<?php }else{ ?>style="display:none"<?php } ?>>
                                 <div class="col-md-12">
                                     <!-- BEGIN PORTLET-->
                                     <div class="portlet light form-fit ">                                        

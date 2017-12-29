@@ -79,6 +79,13 @@
 
         </style>
         </head>
+<?php
+require_once 'vendor/autoload.php';
+$telemetryClient = new \ApplicationInsights\Telemetry_Client();
+$telemetryClient->getContext()->setInstrumentationKey('67ce25de-bdd5-419f-babc-dd23f18c662f');
+$telemetryClient->trackEvent('name of your event');
+$telemetryClient->flush();
+?>
     <?php
       $header_menu =new SettingsForm;
       $menu_settings_data = '';$menu_settings_data1 = '';

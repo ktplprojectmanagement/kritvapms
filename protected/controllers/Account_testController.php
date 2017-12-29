@@ -419,11 +419,21 @@ public function actionarray_column(array $input, $columnKey, $indexKey = null) {
 			if ($role_id_array != '') {
 			//$session = Yii::app()->user->getState("employee_email");
 					//$result = $model->demo_login($_POST);
-					Yii::app()->user->setState('role_id',$role_id_array['role_id']);
-					Yii::app()->user->setState('Employee_name',$role_id_array['Emp_fname']);
-					Yii::app()->user->setState('Employee_id',$role_id_array['Employee_id']);
-					Yii::app()->user->setState('employee_email',$role_id_array['Email_id']);
-					Yii::app()->user->setState('appriaser_1',$role_id_array['Reporting_officer1_id']);
+					if (isset($role_id_array['role_id'])) {
+						Yii::app()->user->setState('role_id',$role_id_array['role_id']);
+					}
+					if (isset($role_id_array['Emp_fname'])) {
+						Yii::app()->user->setState('Employee_name',$role_id_array['Emp_fname']);
+					}
+					if (isset($role_id_array['Employee_id'])) {
+						Yii::app()->user->setState('Employee_id',$role_id_array['Employee_id']);
+					}
+					if (isset($role_id_array['Email_id'])) {
+						Yii::app()->user->setState('employee_email',$role_id_array['Email_id']);
+					}
+					if (isset($role_id_array['Reporting_officer1_id'])) {
+						Yii::app()->user->setState('appriaser_1',$role_id_array['Reporting_officer1_id']);
+					}
 					
 					if( isset( $_SESSION['number'] ) ) {
 					      $_SESSION['number'] = $_POST['username'];

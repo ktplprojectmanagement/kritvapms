@@ -8,7 +8,11 @@ return array(
 	'connectionString' => 'mysql:host=52.172.200.192;dbname=kritvapms',
 	'emulatePrepare' => true,
 	'username' => 'kritvapms',
-	'password' => 'How@u@280515',
+	'password' => 'p@$$w0rD789',
+	// 'connectionString' => 'mysql:host=localhost;dbname=kritva_pms',
+	// 'emulatePrepare' => true,
+	// 'username' => 'root',
+	// 'password' => 'p@$$w0rD789',
 	'charset' => 'utf8',
 	
 );

@@ -55,7 +55,20 @@ public function actionarray_column(array $input, $columnKey, $indexKey = null) {
             }
         }
         return $array;
-    } 	
+    } 
+
+    public function actiondemochk()
+	{
+		header('Access-Control-Allow-Origin: *');
+		$emp_data_desc = array();
+		$emp_data = new EmployeeForm;
+		$where = 'where Employee_id != :Employee_id';
+		$list = array('Employee_id');
+		$data = array('');
+		$emp_data_desc =$emp_data->get_employee_data($where,$data,$list);
+		echo json_encode($emp_data_desc);
+	}
+
 		public function actiongetprofile()
 	{
 

@@ -398,10 +398,10 @@ public function actionarray_column(array $input, $columnKey, $indexKey = null) {
 	    	$Employee_id = Yii::app()->user->getState("employee_email");
 	    	Yii::import('ext.yii-mail.YiiMailMessage');
 			  $message = new YiiMailMessage;
-			  $message->setBody('Please Click on this link to reset password : '.'http://52.172.210.251'.Yii::app()->createUrl("index.php/Reset_password/Index",array("employee_id"=>$Email_id_data['0']["Employee_id"])), 'text/html');
+			  $message->setBody('Please Click on this link to reset password : '.'http://kritva.in'.Yii::app()->createUrl("index.php/Reset_password/Index",array("employee_id"=>$Email_id_data['0']["Employee_id"])), 'text/html');
 			  $message->subject = 'Password Reset';
 			  $message->addTo($_POST['email_id_reset']);			
-			  $message->from = 'kritvapms@kritva.in';
+			  $message->from = 'hrdesk@kritva.com';
 			  if(Yii::app()->mail->send($message))
 			  {
 				Yii::app()->user->setState('employee_email',$_POST['email_id_reset']);

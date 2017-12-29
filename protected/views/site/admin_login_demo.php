@@ -253,7 +253,6 @@ var base_url = window.location.origin;
                                 'url' : base_url+'/kritvapms/index.php?r=Account_test/check',
                                 success : function(data)
                                 {
-//alert(data);
                                 $("#err").css('display','none');
                                          if (data == '1')
                                         {

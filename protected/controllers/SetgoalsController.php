@@ -1048,7 +1048,7 @@ $notification_data->notification_type = 'KPI Deletion';
 					}
 					if($kra_category_flag1>1)
 					{
-						echo '3';die();
+						echo '';die();
 					}			
 				}
 				
@@ -1792,16 +1792,16 @@ if($employee_data['0']['Reporting_officer2_id'] != Yii::app()->user->getState("e
           // print_r($Employee_id);die();
          Yii::import('ext.yii-mail.YiiMailMessage');
 		  $message = new YiiMailMessage;
-		  $message->view = "goal_set_page";
+		  $message->view = "appr_goal_mail";
 		  $params = array('mail_data'=>$employee_data,'kpi_data'=>$kra_data,'employee_data1'=>$employee_data1);
 		  $message->setBody($params, 'text/html');
 		  $message->subject = 'IDP & Goalsheet Approved';
 		  //$email_id = 'priyankamhadik1994@gmail.com';
 		  $message->addTo($mail_id);
 		  $message->addTo($Employee_id);  		  
-		  $message->from = 'testing@kritvainvestments.com';
-                  $message->attach(Swift_Attachment::fromPath(Yii::getPathOfAlias('webroot')."/Goalsheet_docs/goalsheet_".$employee_data['0']['Emp_fname']."_".$employee_data['0']['Emp_lname'].".pdf"));
-		   $message->attach(Swift_Attachment::fromPath(Yii::getPathOfAlias('webroot')."/IDP_docs/IDP_".$employee_data['0']['Emp_fname']."_".$employee_data['0']['Emp_lname'].".pdf"));
+		  $message->from = 'hrdesk@kritva.com';
+     //              $message->attach(Swift_Attachment::fromPath(Yii::getPathOfAlias('webroot')."/Goalsheet_docs/goalsheet_".$employee_data['0']['Emp_fname']."_".$employee_data['0']['Emp_lname'].".pdf"));
+		   // $message->attach(Swift_Attachment::fromPath(Yii::getPathOfAlias('webroot')."/IDP_docs/IDP_".$employee_data['0']['Emp_fname']."_".$employee_data['0']['Emp_lname'].".pdf"));
 		  
 		//print_r($kra_data);die(); 
 		  if(Yii::app()->mail->send($message))
